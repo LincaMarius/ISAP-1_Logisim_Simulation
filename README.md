@@ -45,3 +45,21 @@ The final block diagram of the Output system of this computer is:
 The output device is the old Output Register, but modified by having access to the address bus.
 Thus, we can control the display format (unsigned, signed, hexadecimal, text), by sending commands to the output device on port 1, and data is sent on port 0.
 
+## The format of the ISAP-1 computer instructions is:
+
+| 4 bits instruction code   | 4 bits operand (memory address)          |
+|---------------------------|------------------------------------------|
+
+## The instruction set of the ISAP-1 computer is:
+
+| Mnemonic | Opcode | Hex | Operation                                                     |
+|----------|--------|-----|---------------------------------------------------------------|
+| LDA      | 0000   | 0h  | Load RAM data into Accumulator                                |
+| ADD      | 0001   | 1h  | Add RAM data to Accumulator                                   |
+| SUB      | 0010   | 2h  | Substract RAM data from accumulator                           |
+| LIL      | 0011   | 3h  | Load immediate value into the lower nibble of the Accumulator |
+| LIH      | 0100   | 4h  | Load immediate value into the upper nibble of the Accumulator |
+| IN       | 0101   | 5h  | Input data into the Accumulator                               |
+| JMP      | 0110   | 6h  | Unconditional jump to address n                               |
+| OUT      | 1110   | Eh  | Load Accumulator data into Output Register                    |
+| HLT      | 1111   | Fh  | Stop processing                                               |
