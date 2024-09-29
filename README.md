@@ -131,6 +131,7 @@ The Address Register has the following input, output and control signals:
 - Lar - load data from the bus in the Address Register
 - CLK – clock signal that ensures synchronism in the operation of the computer
 - Data Input – connects to the bus
+- ABUS – control output for the address bus
 
 The implementation of the Address Register block in Logisim is shown in the following figure:
 
@@ -138,3 +139,19 @@ The implementation of the Address Register block in Logisim is shown in the foll
 
 Pin R is to display when this block is reading from the bus.
 
+## Instruction Register implementation
+The Instruction Register has the following input, output and control signals:
+- Li - loading data from the bus into the Instruction Register
+- CLK – clock signal that ensures synchronism in the operation of the computer
+- CLR – reset signal that initializes the Instruction Register to zero
+- They – enable output to put data from the Instruction Register on the bus
+- Data Input – connects to the bus
+- Data Output – connects to the bus
+- INSTR – output where the current instruction is presented to the Control Block
+
+The implementation of the Instruction Register block in Logisim is shown in the following figure:
+
+![ Figure 8 ](/Pictures/Figure8.png)
+
+The PROBE pins are used to view the contents of the block regardless of whether the output is in tri-state mode. \
+Pins W and R, are to indicate when this block is writing or reading from the bus.
