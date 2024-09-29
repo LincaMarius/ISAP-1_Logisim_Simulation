@@ -76,3 +76,37 @@ The timing diagram for the LDA instruction is as follows:
 
 ![ Figure 5 ](/Pictures/Figure5.png)
 
+We can summarize the value of the time control signals shown in this diagram in the following table:
+
+![ Table 1 ](/Pictures/Table1.png)
+
+Signals represented in Red: are active when data is written to the Data BUS \
+Signals represented in Green: are active when reading data from the Data BUS \
+Signals shown in Black: their activation has no influence on the Data BUS
+
+<code style="color : red">If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.</code>
+
+The Boolean equations for the signals that are active when the NOP instruction is executed are:
+-	EP = NOP * T1
+-	LAR = NOP * T1
+-	CP = NOP * T2
+-	PM = NOP * T2
+-	LI = NOP * T2
+-	NEXT = NOP * T3
+
+Since steps T1 and T2 are present and identical in any instruction we can say that they are independent of the executed instruction so we can rewrite the instructions as follows:
+-	EP = T1
+-	LAR = T1
+-	CP = T2
+-	PM = T2
+-	LI = T2
+-	NEXT = NOP * T3
+
+As can be seen from the diagram in figure 5 and from the Boolean equations to implement the NOP instruction we need the following functional blocks:
+-	Program Counter
+-	Address Register
+-	Program Memory as ROM Memory
+-	Instruction Register
+-	Control Unit
+
+
