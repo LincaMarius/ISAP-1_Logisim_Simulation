@@ -50,7 +50,7 @@ Thus, we can control the display format (unsigned, signed, hexadecimal, text), b
 | 4 bits instruction code   | 4 bits operand (memory address)          |
 |---------------------------|------------------------------------------|
 
-## The instruction set of the ISAP-1 computer is:
+## The main instruction set of the ISAP-1 computer is:
 
 | Mnemonic | Opcode | Hex | Operation                                                     |
 |----------|--------|-----|---------------------------------------------------------------|
@@ -59,7 +59,20 @@ Thus, we can control the display format (unsigned, signed, hexadecimal, text), b
 | SUB      | 0010   | 2h  | Substract RAM data from accumulator                           |
 | LIL      | 0011   | 3h  | Load immediate value into the lower nibble of the Accumulator |
 | LIH      | 0100   | 4h  | Load immediate value into the upper nibble of the Accumulator |
-| IN       | 0101   | 5h  | Input data into the Accumulator                               |
+| IN       | 0101   | 5h  | Input data from port p into the Accumulator                   |
 | JMP      | 0110   | 6h  | Unconditional jump to address n                               |
 | OUT      | 1110   | Eh  | Load Accumulator data into Output Register                    |
 | HLT      | 1111   | Fh  | Stop processing                                               |
+
+## Implementation of NOP instruction
+
+The NOP instruction has only the Fetch portion present in all instructions, but has nothing in the execution portion of the instruction. \
+Binary form:  1111 0000 \
+Operation:  no operation \
+No action is performed. This instruction can be used in programs to delay the execution of an action while waiting for a response from slow peripherals. \
+Example: NOP
+
+The timing diagram for the LDA instruction is as follows:
+
+![ Figure 5 ](/Pictures/Figure5.png)
+
