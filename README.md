@@ -154,4 +154,6 @@ The implementation of the Instruction Register block in Logisim is shown in the 
 ![ Figure 8 ](/Pictures/Figure8.png)
 
 The PROBE pins are used to view the contents of the block regardless of whether the output is in tri-state mode. \
-Pins W and R, are to indicate when this block is writing or reading from the bus.
+Pins W and R, are to indicate when this block is writing or reading from the bus. \
+The lower nibble from the Instruction Register is presented on the output to the BUS for both the lower nibble and the upper nibble, this allows the implementation of LIL instructions which load an immediate value into the lower nibble of the Accumulator, but also of the LIH instruction which loads an immediate value into the upper nibble of the Accumulator.
+
