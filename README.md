@@ -123,5 +123,18 @@ The implementation of the Program Counter block in Logisim is shown in the follo
 
 ![ Figure 6 ](/Pictures/Figure6.png)
 
-The PROBE pins are used to view the contents of the block regardless of whether the output is in tri-state mode.
+The PROBE pins are used to view the contents of the block regardless of whether the output is in tri-state mode. \
+Pins W and R, are to indicate when this block is writing or reading from the bus.
+
+## Address Register implementation
+The Address Register has the following input, output and control signals:
+- Lar - load data from the bus in the Address Register
+- CLK – clock signal that ensures synchronism in the operation of the computer
+- Data Input – connects to the bus
+
+The implementation of the Address Register block in Logisim is shown in the following figure:
+
+![ Figure 7 ](/Pictures/Figure7.png)
+
+Pin R is to display when this block is reading from the bus.
 
