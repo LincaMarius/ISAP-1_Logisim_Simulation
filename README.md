@@ -109,4 +109,19 @@ As can be seen from the diagram in figure 5 and from the Boolean equations to im
 -	Instruction Register
 -	Control Unit
 
+## Program Counter implementation
+Program Counter has the following input, output and control signals:
+- Cp – Program Counter content increment
+- Lp - loading data from the bus into the Program Counter
+- CLK – clock signal that ensures synchronism in the operation of the computer
+- CLR – reset signal that initializes the Program Counter to zero
+- Ep – output activation for putting data from the Program Counter on the bus
+- Data Input – connects to the bus
+- Data Output – connects to the bus
+
+The implementation of the Program Counter block in Logisim is shown in the following figure:
+
+![ Figure 6 ](/Pictures/Figure6.png)
+
+The PROBE pins are used to view the contents of the block regardless of whether the output is in tri-state mode.
 
