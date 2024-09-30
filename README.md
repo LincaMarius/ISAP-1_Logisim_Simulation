@@ -155,5 +155,37 @@ The implementation of the Instruction Register block in Logisim is shown in the 
 
 The PROBE pins are used to view the contents of the block regardless of whether the output is in tri-state mode. \
 Pins W and R, are to indicate when this block is writing or reading from the bus. \
+
 The lower nibble from the Instruction Register is presented on the output to the BUS for both the lower nibble and the upper nibble, this allows the implementation of LIL instructions which load an immediate value into the lower nibble of the Accumulator, but also of the LIH instruction which loads an immediate value into the upper nibble of the Accumulator.
+
+## Control Unit Implementation
+The Control Unit to control the ISAP-1 computer to execute the NOP instruction has the following input, output and control signals:
+- INSTR – entry where the current instruction is presented by the Instruction Register
+- CLK – clock signal that ensures synchronism in the operation of the computer
+- CLR – reset signal that initializes the Control Unit to zero
+- INSTR – output where the current instruction is presented to the Control Block
+- Lar – control signal that commands the loading of data from the bus into the Address Register
+- Cp – control signal that commands the increment of the content of the Program Counter
+- Lp - control signal that commands the loading of data from the bus into the Program Counter
+- Ep – control signal that commands the activation of the outputs to put the data from the Program Counter on the bus
+- Li - control signal that commands the loading of data from the bus into the Instruction Register
+- Ei – control signal that commands the activation of the outputs to put the data from the Instruction Register on the bus
+- Pm – control signal that commands the activation of the outputs to put data from the ROM Program Memory on the bus
+
+The Boolean equations for all these signals that are active when the NOP instruction is executed are:
+-	EP = T1
+-	LAR = T1
+-	CP = T2
+-	PM = T2
+-	LI = T2
+-	NEXT = NOP * T3
+-	LP = 0
+-	EI = 0
+
+We will consider all instructions to be NOP, so if an opcode does not have an associated instruction, it will automatically be treated as a NOP instruction.
+
+By doing so I will be able to test the functionality of the computer using the minimum of electronic components. Thus, by reducing the number of components that enter the structure of a system, we reduce the probability of a defect occurring, and in case we have an implementation error, we reduce the number of blocks that must be tested by default, and we reduce the debugging time.
+
+Result:
+-	NEXT = T3
 
