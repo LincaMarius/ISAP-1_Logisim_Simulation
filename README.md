@@ -189,3 +189,7 @@ By doing so I will be able to test the functionality of the computer using the m
 Result:
 -	NEXT = T3
 
+The implementation of the Control Unit block in Logisim is shown in the following figure:
+
+![ Figure 9 ](/Pictures/Figure9.png)
+
