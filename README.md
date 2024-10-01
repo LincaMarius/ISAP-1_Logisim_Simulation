@@ -204,3 +204,25 @@ The system has been tested and is working properly.
 
 The simulation in the Logisim program is in the file:
 [ ISAP-1_v1.circ ](/ISAP-1_v1.circ)  (mouse right click and choose – Save link as... ).
+
+## LIL instruction implementation
+LIL – Load immediate value into lower nibble of Accumulator. \
+The full description of the implementation of the LIL instruction is here: \
+https://github.com/LincaMarius/ISAP-1_Computer_Instruction_Set#lil-instruction--load-immediate-value-into-lower-nible-of-accumulator \
+
+To implement the LIL instruction at the simulation level we must first implement the Accumulator register.
+
+## Implementation of the Accumulator Register
+The Accumulator register has the following input, output and control signals:
+- LA - loading data from the bus into the Accumulator Register
+- CLK – clock signal that ensures synchronism in the operation of the computer
+- EA – output activation for putting data from the Accumulator Register on the bus
+- Data Input – connects to the bus
+- Data Output – connects to the bus
+- DataA – the contents of the Accumulator connect to the Logical and Arithmetic Unit
+
+The implementation of the Accumulator Register block in Logisim is shown in the following figure:
+
+
+
+
