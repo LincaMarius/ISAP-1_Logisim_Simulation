@@ -203,4 +203,4 @@ The green LED indicates that the respective block is reading data from the data 
 The system has been tested and is working properly.
 
 The simulation in the Logisim program is in the file:
-[ ISAP-1_v1.circ ](/ISAP-1_v1.circ)
+[ ISAP-1_v1.circ ](/ISAP-1_v1.circ)  (mouse right click and choose – Save link as... ).
