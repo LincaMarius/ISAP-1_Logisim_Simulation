@@ -260,5 +260,9 @@ The optimized implementation of the Control Unit block in Logisim for the optimi
 
 ![ Figure 13 ](/Pictures/Figure13.png)
 
+The complete schematic of the ISAP-1 computer that correctly executes the NOP instruction and the LIL instruction is shown in the following figure:
 
+![ Figure 14 ](/Pictures/Figure14.png)
+
+The system has been tested and is working properly.
 
