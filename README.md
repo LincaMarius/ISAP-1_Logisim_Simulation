@@ -249,6 +249,9 @@ We will consider all unimplemented instructions as NOP.
 
 The implementation of the Control Unit block in Logisim for the execution of the LIL instruction is shown in the following figure:
 
+![ Figure 12 ](/Pictures/Figure12.png)
+
+
 
 
 
