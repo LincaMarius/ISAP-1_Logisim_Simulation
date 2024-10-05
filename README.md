@@ -203,7 +203,7 @@ The green LED indicates that the respective block is reading data from the data 
 The system has been tested and is working properly.
 
 The simulation in the Logisim program is in the file:
-[ ISAP-1_v1.circ ](/ISAP-1_v1.circ)  (mouse right click and choose – Save link as... ).
+[ ISAP-1_v1.circ ](/Logisim/ISAP-1_v1.circ)  (mouse right click and choose – Save link as... ).
 
 ## LIL instruction implementation
 LIL – Load immediate value into lower nibble of Accumulator. \
@@ -267,5 +267,5 @@ The complete schematic of the ISAP-1 computer that correctly executes the NOP in
 The system has been tested and is working properly.
 
 The simulation of this version of the ISAP-1 computer in the Logisim program is in the file: 
-[ ISAP-1_v2.circ ](/ISAP-1_v2.circ) 
+[ ISAP-1_v2.circ ](/Logisim/ISAP-1_v2.circ) 
 (to download the file - mouse right click and choose – Save link as... )
