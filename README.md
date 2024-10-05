@@ -269,3 +269,23 @@ The system has been tested and is working properly.
 The simulation of this version of the ISAP-1 computer in the Logisim program is in the file: 
 [ ISAP-1_v2.circ ](/Logisim/ISAP-1_v2.circ) 
 (to download the file - mouse right click and choose – Save link as... )
+
+## LIH instruction implementation
+LIH – Load an immediate value into the upper nibble of the Accumulator
+
+The full description of the implementation of the LIH instruction is here: \
+https://github.com/LincaMarius/ISAP-1_Computer_Instruction_Set#lih-instruction--load-immediate-value-into-upper-nible-of-accumulator
+
+## Update Control Unit for LIH instruction implementation
+The Control Unit to control the ISAP-1 computer to execute the new LIH instruction does not need additional input, output and control signals.
+
+The Boolean equations for the signals that are active when the LIH instruction is executed are:
+-	EI = LIH * T3
+-	LAH = LIH * T3
+-	NEXT = NOP * T3 + LIH * T4
+
+We will consider all unimplemented instructions as NOP.
+
+The implementation of the Control Unit block in Logisim for executing the new LIH instruction is shown in the following figure:
+
+
