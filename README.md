@@ -203,7 +203,7 @@ The green LED indicates that the respective block is reading data from the data 
 The system has been tested and is working properly.
 
 The simulation in the Logisim program is in the file:
-[ ISAP-1_v1.circ ](/ISAP-1_v1.circ)  (mouse right click and choose – Save link as... ).
+[ ISAP-1_v1.circ ](/Logisim/ISAP-1_v1.circ)  (mouse right click and choose – Save link as... ).
 
 ## LIL instruction implementation
 LIL – Load immediate value into lower nibble of Accumulator. \
