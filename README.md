@@ -251,7 +251,14 @@ The implementation of the Control Unit block in Logisim for the execution of the
 
 ![ Figure 12 ](/Pictures/Figure12.png)
 
+Since the complexity of the Control Block increases, I propose grouping the output signals into three distinct groups:
+- command signals that will cause a function block to put data on the bus
+- command signals that will cause a function block to read data from the bus
+- command signals that will control an action of a functional block that has no effect on the data bus
 
+The optimized implementation of the Control Unit block in Logisim for the optimized LIL execution is shown in the following figure:
+
+![ Figure 13 ](/Pictures/Figure13.png)
 
 
 
