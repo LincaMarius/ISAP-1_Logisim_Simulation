@@ -219,9 +219,17 @@ The Accumulator register has the following input, output and control signals:
 - EA – output activation for putting data from the Accumulator Register on the bus
 - Data Input – connects to the bus
 - Data Output – connects to the bus
-- DataA – the contents of the Accumulator connect to the Logical and Arithmetic Unit
+- ALUA – the contents of the Accumulator connect to the Logical and Arithmetic Unit
+
+Implementation of the LIL instruction requires the Accumulator Block to have the LAL control signal:
+- LAL - loading data from the bus into the Accumulator Register in the lower nibble
+
+Implementation of the LIH instruction requires the Accumulator Block to have the LAH control signal:
+- LAH - loading data from the bus into the Accumulator Register in the upper nibble
 
 The implementation of the Accumulator Register block in Logisim is shown in the following figure:
+
+![ Figure 11 ](/Pictures/Figure11.png)
 
 
 
