@@ -231,6 +231,24 @@ The implementation of the Accumulator Register block in Logisim is shown in the 
 
 ![ Figure 11 ](/Pictures/Figure11.png)
 
+Now the Control Block must be modified to implement the control signals for the LIL instruction
+
+## Update Control Unit
+The Control Unit to control the ISAP-1 computer to execute the NOP instruction and the LIL instruction additionally has the following input, output and control signals necessary to control the Accumulator block:
+- LAL - control signal that commands the loading of data from the bus into the Accumulator Register in the lower nibble
+- LAH - control signal that commands the loading of data from the bus into the Accumulator Register in the upper nibble
+- EA – control signal that commands the activation of the outputs to put the data from the Accumulator Register on the bus
+
+The Boolean equations for all these signals that are active when the NOP instruction and the LIL instruction are executed are:
+-	NEXT = NOP * T3 + LIL * T4
+-	LP = 0
+-	EI = LIL * T3
+-	LAL = LIL * T3
+
+We will consider all unimplemented instructions as NOP.
+
+The implementation of the Control Unit block in Logisim for the execution of the LIL instruction is shown in the following figure:
+
 
 
 
