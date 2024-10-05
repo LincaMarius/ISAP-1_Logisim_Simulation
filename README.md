@@ -266,3 +266,6 @@ The complete schematic of the ISAP-1 computer that correctly executes the NOP in
 
 The system has been tested and is working properly.
 
+The simulation of this version of the ISAP-1 computer in the Logisim program is in the file: 
+[ ISAP-1_v2.circ ](/ISAP-1_v2.circ) 
+(to download the file - mouse right click and choose – Save link as... )
