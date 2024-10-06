@@ -300,3 +300,9 @@ The complete schematic of the ISAP-1 computer correctly executing the new LIH in
 
 ![ Figure 16 ](/Pictures/Figure16.png)
 
+The system has been tested and is working properly.
+
+The simulation of this version of the ISAP-1 computer in the Logisim program is in the file: 
+[ ISAP-1_v3.circ ](/ISAP-1_v3.circ) 
+(to download the file - mouse right click and choose – Save link as... )
+
