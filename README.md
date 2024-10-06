@@ -140,12 +140,6 @@ The implementation of the Address Register block in Logisim is shown in the foll
 
 Pin R is to display when this block is reading from the bus.
 
-|       | SEL |	LD  |
-|-------|-----|-----|
-| Write	|   1 |  0  |
-| Read	|  1  |  1  |
-
-
 ## Instruction Register implementation
 The Instruction Register has the following input, output and control signals:
 - Li - loading data from the bus into the Instruction Register
@@ -335,6 +329,10 @@ This module is shown in the following figure:
 
 Thus we determined the following behavior:
 
+|       | SEL |	LD  |
+|-------|-----|-----|
+| Write	|   1 |  0  |
+| Read	|  1  |  1  |
 
 ## Update Control Unit for STA instruction implementation
 The Control Unit to control the ISAP-1 computer for the execution of the new STA instruction needs to control in addition the following control signals:
