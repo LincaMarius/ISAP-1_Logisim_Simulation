@@ -284,8 +284,14 @@ The Boolean equations for the signals that are active when the LIH instruction i
 -	LAH = LIH * T3
 -	NEXT = NOP * T3 + LIH * T4
 
+If we take into account the existing signals for the already implemented instructions and add the new signals we get the following equations for the control signals:
+-	EI = LIL * T3 + LIH * T3
+-	LAL = LIL * T3
+-	LAH = LIH * T3
+-	NEXT = NOP * T3 + LIL * T4 + LIH * T4
+
 We will consider all unimplemented instructions as NOP.
 
 The implementation of the Control Unit block in Logisim for executing the new LIH instruction is shown in the following figure:
 
-
+![ Figure 15 ](/Pictures/Figure15.png)
