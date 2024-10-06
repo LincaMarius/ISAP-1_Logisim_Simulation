@@ -295,3 +295,8 @@ We will consider all unimplemented instructions as NOP.
 The implementation of the Control Unit block in Logisim for executing the new LIH instruction is shown in the following figure:
 
 ![ Figure 15 ](/Pictures/Figure15.png)
+
+The complete schematic of the ISAP-1 computer correctly executing the new LIH instruction is shown in the following figure:
+
+![ Figure 16 ](/Pictures/Figure16.png)
+
