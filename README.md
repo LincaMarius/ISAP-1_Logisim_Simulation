@@ -325,7 +325,7 @@ Since the RAM memory model present in the Logisim program has a different operat
 
 This module is shown in the following figure:
 
-
+![ Figure 17 ](/Pictures/Figure17.png)
 
 ## Update Control Unit for STA instruction implementation
 The Control Unit to control the ISAP-1 computer for the execution of the new STA instruction needs to control in addition the following control signals:
@@ -353,7 +353,7 @@ We will consider all unimplemented instructions as NOP.
 
 The implementation of the Control Unit block in Logisim for executing the new STA instruction is shown in the following figure:
 
-![ Figure 17 ](/Pictures/Figure17.png)
+![ Figure 18 ](/Pictures/Figure18.png)
 
 
 
