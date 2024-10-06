@@ -61,6 +61,7 @@ Thus, we can control the display format (unsigned, signed, hexadecimal, text), b
 | LIH      | 0100   | 4h  | Load immediate value into the upper nibble of the Accumulator |
 | IN       | 0101   | 5h  | Input data from port p into the Accumulator                   |
 | JMP      | 0110   | 6h  | Unconditional jump to address n                               |
+| STA      | 0111   | 7H  | Store Accumulator data into RAM                               |
 | OUT      | 1110   | Eh  | Load Accumulator data into Output Register                    |
 | HLT      | 1111   | Fh  | Stop processing                                               |
 
@@ -305,4 +306,48 @@ The system has been tested and is working properly.
 The simulation of this version of the ISAP-1 computer in the Logisim program is in the file: 
 [ ISAP-1_v3.circ ](/Logisim/ISAP-1_v3.circ) 
 (to download the file - mouse right click and choose – Save link as... )
+
+## STA instruction implementation
+STA – Store data from Accumulator in RAM memory at address n \
+The full description of the implementation of the STA instruction is here: \
+https://github.com/LincaMarius/ISAP-1_Computer_Instruction_Set#sta-instruction--store-accumulator
+
+To implement the STA instruction at the simulation level, we must first implement the RAM according to the diagram in [ Figure 2 ](/Pictures/Figure2.png).
+
+## Implementation of the RAM Memory module
+The RAM Memory module has the following inputs, outputs and control signals:
+- CE – Chip Enable activates the memory chip
+- W – Write causes data to be written to memory
+- Data – connects to the bus
+- Address – connects to the address bus
+
+## Update Control Unit for STA instruction implementation
+The Control Unit to control the ISAP-1 computer for the execution of the new STA instruction needs to control in addition the following control signals:
+- DM – connects to the Chip Enable pin of the RAM memory
+- W – connects to the Write pin of the RAM memory
+
+The Boolean equations for the signals that are active when the STA instruction is executed are:
+-	LAR = STA * T1 + STA * T3 = STA * ( T1 + T3)
+-	EI = STA * T3
+-	EA = STA * T4
+-	DM = STA * T4
+-	W = STA * T4
+-	NEXT = NOP * T3 + STA * T5
+
+If we take into account the existing signals for the already implemented instructions and add the new signals we get the following equations for the control signals:
+-	EI = LIL * T3 + LIH * T3 + STA * T3
+-	LAL = LIL * T3
+-	LAH = LIH * T3
+-	EA = STA * T4
+-	DM = STA * T4
+-	W = STA * T4
+-	NEXT = NOP * T3 + LIL * T4 + LIH * T4 + STA * T5
+
+We will consider all unimplemented instructions as NOP.
+
+The implementation of the Control Unit block in Logisim for executing the new STA instruction is shown in the following figure:
+
+![ Figure 17 ](/Pictures/Figure17.png)
+
+
 
