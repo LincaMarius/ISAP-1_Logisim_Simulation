@@ -321,6 +321,12 @@ The RAM Memory module has the following inputs, outputs and control signals:
 - Data – connects to the bus
 - Address – connects to the address bus
 
+Since the RAM memory model present in the Logisim program has a different operating mode than a real memory chip we implemented a module called “RAMtest” to determine this behavior.
+
+This module is shown in the following figure:
+
+
+
 ## Update Control Unit for STA instruction implementation
 The Control Unit to control the ISAP-1 computer for the execution of the new STA instruction needs to control in addition the following control signals:
 - DM – connects to the Chip Enable pin of the RAM memory
