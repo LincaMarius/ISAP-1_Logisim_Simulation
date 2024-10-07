@@ -390,5 +390,9 @@ The following program is loaded into the ROM memory:
 | 14      | 79h  | STA 9   | [09] <- 77h |         |
 | 15      | 48h  | LIH 8   | AH <- 8     | A = 87h |
 
-The program continues from address 0 and runs indefinitely.
+The program runs completely from address 0 to address 15 and then continues from address 0 and thus runs indefinitely. \
+The system has been tested and is working properly. \
+The simulation of this version of the ISAP-1 computer in the Logisim program is in the file: 
+[ ISAP-1_v4.circ ](/Logisim/ISAP-1_v4.circ) 
+(to download the file - mouse right click and choose – Save link as... )
 
