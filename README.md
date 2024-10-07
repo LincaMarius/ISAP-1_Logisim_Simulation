@@ -365,5 +365,7 @@ The implementation of the Control Unit block in Logisim for executing the new ST
 
 ![ Figure 18 ](/Pictures/Figure18.png)
 
+The complete schematic of the ISAP-1 computer that correctly executes the new STA instruction is shown in the following figure:
 
+![ Figure 19 ](/Pictures/Figure19.png)
 
