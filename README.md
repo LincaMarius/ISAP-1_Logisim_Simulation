@@ -329,10 +329,13 @@ This module is shown in the following figure:
 
 Thus we determined the following behavior:
 
-|       | SEL |	LD  |
-|-------|-----|-----|
-| Write	|   1 |  0  |
-| Read	|  1  |  1  |
+|          | SEL |  LD | Description       |
+|----------|-----|-----|-------------------|
+| Write	   |  1  |  0  |                   |
+| Read	   |  1  |  1  | LD set before SEL |
+| Disabled |  0  |  0  |                   |
+
+
 
 ## Update Control Unit for STA instruction implementation
 The Control Unit to control the ISAP-1 computer for the execution of the new STA instruction needs to control in addition the following control signals:
