@@ -369,3 +369,26 @@ The complete schematic of the ISAP-1 computer that correctly executes the new ST
 
 ![ Figure 19 ](/Pictures/Figure19.png)
 
+The following program is loaded into the ROM memory:
+
+| Address | Code | Asembly | Action      | Result  |
+|---------|------|---------|-------------|---------|
+| 00      | 31h  | LIL 1   | AL <- 1     | A = x1h |
+| 01      | 41h  | LIH 1   | AH <- 1     | A = 11h |
+| 02      | 72h  | STA 2   | [02] <- 11h |         |
+| 03      | 33h  | LIL 3   | AL <- 3     | A = 13h |
+| 04      | 45h  | LIH 5   | AH <- 5     | A = 53h |
+| 05      | 75h  | STA 5   | [05] <- 53h |         |
+| 06      | 34h  | LIL 4   | AL <- 4     | A = 54h |
+| 07      | 44h  | LIH 4   | AH <- 4     | A = 44h |
+| 08      | 76h  | STA 6   | [06] <- 44h |         |
+| 09      | 38h  | LIL 8   | AL <- 8     | A = 48h |
+| 10      | 42h  | LIH 2   | AH <- 2     | A = 28h |
+| 11      | 71h  | STA 1   | [01] <- 28h |         |
+| 12      | 37h  | LIL 7   | AL <- 7     | A = 27h |
+| 13      | 47h  | LIH 7   | AH <- 7     | A = 77h |
+| 14      | 79h  | STA 9   | [09] <- 77h |         |
+| 15      | 48h  | LIH 8   | AH <- 8     | A = 87h |
+
+The program continues from address 0 and runs indefinitely.
+
