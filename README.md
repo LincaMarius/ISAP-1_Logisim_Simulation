@@ -427,8 +427,31 @@ The full description of the implementation of the LDA instruction is here: \
 https://github.com/LincaMarius/ISAP-1_Computer_Instruction_Set#lda-instruction--load-the-accumulator
 
 ## Update Control Unit for LDA instruction implementation
-The Control Unit to control the ISAP-1 computer for executing the new LDA instruction does not need to control any other control signals in addition to the existing ones.
+The Control Unit to control the ISAP-1 computer to execute the new LDA instruction does not need any other command signals in addition to the existing ones.
 
 The Boolean equations for the signals that are active when the LDA instruction is executed are:
+-	LAR = T1 + LDA * T3
+-	EI = LDA * T3
+-	DM = LDA * T4
+-	LAH = LDA * T4
+-	LAL = LDA * T4
+
+If we take into account the existing signals for the already implemented instructions and add the new signals we get the following equations for the control signals:
+-	LAR = T1 + STA * T3 + LDA * T3
+-	EI = LIL * T3 + LIH * T3 + STA * T3 + LDA * T3
+-	LAL = LIL * T3 + LDA * T4
+-	LAH = LIH * T3 + LDA * T4
+-	EA = STA * T4
+-	DM = STA * T4 + LDA * T4
+-	W = STA * T4
+
+We will consider all unimplemented instructions as NOP.
+
+The implementation of the Control Unit block in Logisim for executing the new LDA instruction is shown in the following figure:
+
+![ Figure 21 ](/Pictures/Figure21.png)
+
+
+
 
 
