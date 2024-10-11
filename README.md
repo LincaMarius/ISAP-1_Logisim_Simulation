@@ -424,4 +424,11 @@ The ROM contents in my simulation is: [ ROM4](/Logisim/ROM4)
 ## LDA instruction implementation
 LDA – Load data from RAM memory from address n into Accumulator \
 The full description of the implementation of the LDA instruction is here: \
+https://github.com/LincaMarius/ISAP-1_Computer_Instruction_Set#lda-instruction--load-the-accumulator
+
+## Update Control Unit for LDA instruction implementation
+The Control Unit to control the ISAP-1 computer for executing the new LDA instruction does not need to control any other control signals in addition to the existing ones.
+
+The Boolean equations for the signals that are active when the LDA instruction is executed are:
+
 
