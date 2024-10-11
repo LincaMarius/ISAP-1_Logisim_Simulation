@@ -247,6 +247,8 @@ The optimized implementation of the Control Unit block in Logisim for the optimi
 
 ![ Figure 13 ](/Pictures/Figure13.png)
 
+Since all unimplemented instructions are considered as a NOP instruction, we will have a maximum number of steps equal to 3, the NEXT signal resets the Step Counter in step T4.
+
 The complete schematic of the ISAP-1 computer that correctly executes the NOP instruction and the LIL instruction is shown in the following figure:
 
 ![ Figure 14 ](/Pictures/Figure14.png)
@@ -254,8 +256,7 @@ The complete schematic of the ISAP-1 computer that correctly executes the NOP in
 The system has been tested and is working properly.
 
 The simulation of this version of the ISAP-1 computer in the Logisim program is in the file: 
-[ ISAP-1_v2.circ ](/Logisim/ISAP-1_v2.circ) 
-(to download the file - mouse right click and choose – Save link as... )
+[ ISAP-1_v2.circ ](/Logisim/ISAP-1_v2.circ)
 
 ## LIH instruction implementation
 LIH – Load an immediate value into the upper nibble of the Accumulator
@@ -269,13 +270,11 @@ The Control Unit to control the ISAP-1 computer to execute the new LIH instructi
 The Boolean equations for the signals that are active when the LIH instruction is executed are:
 -	EI = LIH * T3
 -	LAH = LIH * T3
--	NEXT = NOP * T3 + LIH * T4
 
 If we take into account the existing signals for the already implemented instructions and add the new signals we get the following equations for the control signals:
 -	EI = LIL * T3 + LIH * T3
 -	LAL = LIL * T3
 -	LAH = LIH * T3
--	NEXT = NOP * T3 + LIL * T4 + LIH * T4
 
 We will consider all unimplemented instructions as NOP.
 
