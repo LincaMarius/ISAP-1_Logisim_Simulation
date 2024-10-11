@@ -451,7 +451,35 @@ The implementation of the Control Unit block in Logisim for executing the new LD
 
 ![ Figure 21 ](/Pictures/Figure21.png)
 
+The complete schematic of the ISAP-1 computer that correctly executes the new LDA instruction is shown in the following figure:
 
+![ Figure 22 ](/Pictures/Figure22.png)
+
+The following program is loaded into the ROM memory:
+| Address | Code | Asembly | Action      | Result  |
+|---------|------|---------|-------------|---------|
+| 00      | 31h  | LIL 1   | AL <- 1     | A = x1h |
+| 01      | 41h  | LIH 1   | AH <- 1     | A = 11h |
+| 02      | 70h  | STA 0   | [00] <- 11h |         |
+| 03      | 00h  | LDA 0   | A <- [00]   | A = 11h |
+| 04      | 75h  | STA 5   | [05] <- 11h |         |
+| 05      | 05h  | LDA 5   | A <- [05]   | A = 11h |
+| 06      | 7Ah  | STA A   | [0A] <- 11h |         |
+| 07      | 0Ah  | LDA A   | A <- [0A]   | A = 11h |
+| 08      | 7Fh  | STA F   | [0F] <- 11h |         |
+| 09      | 0Fh  | LDA F   | A <- [0F]   | A = 11h |
+| 10      | 73h  | STA 3   | [03] <- 11h |         |
+| 11      | 03h  | LDA 3   | A <- [03]   | A = 11h |
+| 12      | 76h  | STA 6   | [06] <- 11h |         |
+| 13      | 06h  | LDA 6   | A <- [06]   | A = 11h |
+| 14      | 79h  | STA 9   | [09] <- 11h |         |
+| 15      | 7Ch  | STA C   | [0C] <- 11h |         |
+
+The program runs completely from address 0 to address 15 and then continues from address 0 and thus runs indefinitely. \
+The system has been tested and is working properly.
+
+The simulation of this version of the ISAP-1 computer in the Logisim program is in the file: 
+[ ISAP-1_v5.circ ](/Logisim/ISAP-1_v5.circ)
 
 
 
