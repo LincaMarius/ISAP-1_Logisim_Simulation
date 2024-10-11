@@ -193,6 +193,8 @@ The system has been tested and is working properly.
 The simulation in the Logisim program is in the file:
 [ ISAP-1_v1.circ ](/Logisim/ISAP-1_v1.circ)
 
+The contents of the ROM memory can be anything, and we can even test the system without connecting any device to the CPU buses. We will have a system that continuously increments the address.
+
 ## LIL instruction implementation
 LIL – Load immediate value into lower nibble of Accumulator. \
 The full description of the implementation of the LIL instruction is here: \
