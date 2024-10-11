@@ -366,7 +366,7 @@ The Control Unit to control the ISAP-1 computer for the execution of the new STA
 - W – connects to the Write pin of the RAM memory
 
 The Boolean equations for the signals that are active when the STA instruction is executed are:
--	LAR = STA * T1 + STA * T3 = STA * ( T1 + T3)
+-	LAR = T1 + STA * T3
 -	EI = STA * T3
 -	EA = STA * T4
 -	DM = STA * T4
