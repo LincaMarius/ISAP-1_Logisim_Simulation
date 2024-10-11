@@ -170,7 +170,6 @@ The Boolean equations for all these signals that are active when the NOP instruc
 -	CP = T2
 -	PM = T2
 -	LI = T2
--	NEXT = NOP * T3
 -	LP = 0
 -	EI = 0
 
@@ -179,6 +178,8 @@ We will consider all instructions to be NOP, so if an opcode does not have an as
 The implementation of the Control Unit block in Logisim is shown in the following figure:
 
 ![ Figure 9 ](/Pictures/Figure9.png)
+
+Since all instructions are considered as the NOP instruction, we will have a maximum number of steps equal to 2, the NEXT signal resets the Step Counter in step T3.
 
 The complete schematic of the ISAP-1 computer that correctly executes the NOP instruction is shown in the following figure:
 
