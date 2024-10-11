@@ -374,6 +374,7 @@ The Boolean equations for the signals that are active when the STA instruction i
 
 If we take into account the existing signals for the already implemented instructions and add the new signals we get the following equations for the control signals:
 -	EI = LIL * T3 + LIH * T3 + STA * T3
+-	LAR = T1 + STA * T3
 -	LAL = LIL * T3
 -	LAH = LIH * T3
 -	EA = STA * T4
