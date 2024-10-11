@@ -204,11 +204,10 @@ To implement the LIL instruction at the simulation level we must first implement
 
 ## Implementation of the Accumulator Register
 The Accumulator register has the following input, output and control signals:
-- LA - loading data from the bus into the Accumulator Register
 - CLK – clock signal that ensures synchronism in the operation of the computer
 - EA – output activation for putting data from the Accumulator Register on the bus
-- Data Input – connects to the bus
-- Data Output – connects to the bus
+- DIN - Data Input – connects to the bus
+- DOUT - Data Output – connects to the bus
 - ALUA – the contents of the Accumulator connect to the Logical and Arithmetic Unit
 
 Implementation of the LIL instruction requires the Accumulator Block to have the LAL control signal:
@@ -230,10 +229,8 @@ The Control Unit to control the ISAP-1 computer to execute the NOP instruction a
 - EA – control signal that commands the activation of the outputs to put the data from the Accumulator Register on the bus
 
 The Boolean equations for all these signals that are active when the NOP instruction and the LIL instruction are executed are:
--	NEXT = NOP * T3 + LIL * T4
--	LP = 0
--	EI = LIL * T3
 -	LAL = LIL * T3
+-	EI = LIL * T3
 
 We will consider all unimplemented instructions as NOP.
 
