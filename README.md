@@ -195,6 +195,8 @@ The simulation in the Logisim program is in the file:
 
 The contents of the ROM memory can be anything, and we can even test the system without connecting any device to the CPU buses. We will have a system that continuously increments the address.
 
+The ROM contents in my simulation is: [ ROM1](/Logisim/ROM1)
+
 ## LIL instruction implementation
 LIL – Load immediate value into lower nibble of Accumulator. \
 The full description of the implementation of the LIL instruction is here: \
