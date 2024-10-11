@@ -68,7 +68,7 @@ Thus, we can control the display format (unsigned, signed, hexadecimal, text), b
 ## Implementation of NOP instruction
 
 The NOP instruction has only the Fetch portion present in all instructions, but has nothing in the execution portion of the instruction. \
-Binary form:  1111 0000 \
+Binary form:  xxxx \
 Operation:  no operation \
 No action is performed. This instruction can be used in programs to delay the execution of an action while waiting for a response from slow peripherals. \
 Example: NOP
@@ -335,8 +335,6 @@ Thus we determined the following behavior:
 | Read	   |  1  |  1  | LD set before SEL |
 | Disabled |  0  |  0  |                   |
 
-
-
 ## Update Control Unit for STA instruction implementation
 The Control Unit to control the ISAP-1 computer for the execution of the new STA instruction needs to control in addition the following control signals:
 - DM – connects to the Chip Enable pin of the RAM memory
@@ -395,4 +393,8 @@ The system has been tested and is working properly. \
 The simulation of this version of the ISAP-1 computer in the Logisim program is in the file: 
 [ ISAP-1_v4.circ ](/Logisim/ISAP-1_v4.circ) 
 (to download the file - mouse right click and choose – Save link as... )
+
+## LDA instruction implementation
+LDA – Load data from RAM memory from address n into Accumulator \
+The full description of the implementation of the LDA instruction is here: \
 
