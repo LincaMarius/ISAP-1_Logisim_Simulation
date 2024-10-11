@@ -260,6 +260,8 @@ The system has been tested and is working properly.
 The simulation of this version of the ISAP-1 computer in the Logisim program is in the file: 
 [ ISAP-1_v2.circ ](/Logisim/ISAP-1_v2.circ)
 
+The ROM contents in my simulation is: [ ROM2](/Logisim/ROM2)
+
 ## LIH instruction implementation
 LIH – Load an immediate value into the upper nibble of the Accumulator
 
