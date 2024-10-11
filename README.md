@@ -371,7 +371,6 @@ The Boolean equations for the signals that are active when the STA instruction i
 -	EA = STA * T4
 -	DM = STA * T4
 -	W = STA * T4
--	NEXT = NOP * T3 + STA * T5
 
 If we take into account the existing signals for the already implemented instructions and add the new signals we get the following equations for the control signals:
 -	EI = LIL * T3 + LIH * T3 + STA * T3
@@ -380,7 +379,6 @@ If we take into account the existing signals for the already implemented instruc
 -	EA = STA * T4
 -	DM = STA * T4
 -	W = STA * T4
--	NEXT = NOP * T3 + LIL * T4 + LIH * T4 + STA * T5
 
 We will consider all unimplemented instructions as NOP.
 
