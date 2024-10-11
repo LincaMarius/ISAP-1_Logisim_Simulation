@@ -110,11 +110,11 @@ As can be seen from the diagram in figure 5 and from the Boolean equations to im
 
 ## Program Counter implementation
 Program Counter has the following input, output and control signals:
-- Cp – Program Counter content increment
-- Lp - loading data from the bus into the Program Counter
+- CP – Program Counter content increment
+- LP - loading data from the bus into the Program Counter
 - CLK – clock signal that ensures synchronism in the operation of the computer
 - CLR – reset signal that initializes the Program Counter to zero
-- Ep – output activation for putting data from the Program Counter on the bus
+- EP – output activation for putting data from the Program Counter on the bus
 - DIN - Data Input – connects to the bus
 - DOUT - Data Output – connects to the bus
 
@@ -162,14 +162,7 @@ The Control Unit to control the ISAP-1 computer to execute the NOP instruction h
 - INSTR – entry where the current instruction is presented by the Instruction Register
 - CLK – clock signal that ensures synchronism in the operation of the computer
 - CLR – reset signal that initializes the Control Unit to zero
-- CTRL – output where the current instruction is presented to the Control Block
-- Lar – control signal that commands the loading of data from the bus into the Address Register
-- Cp – control signal that commands the increment of the content of the Program Counter
-- Lp - control signal that commands the loading of data from the bus into the Program Counter
-- Ep – control signal that commands the activation of the outputs to put the data from the Program Counter on the bus
-- Li - control signal that commands the loading of data from the bus into the Instruction Register
-- Ei – control signal that commands the activation of the outputs to put the data from the Instruction Register on the bus
-- Pm – control signal that commands the activation of the outputs to put data from the ROM Program Memory on the bus
+- CTRL – output where the control signals are presented
 
 The Boolean equations for all these signals that are active when the NOP instruction is executed are:
 -	EP = T1
@@ -182,11 +175,6 @@ The Boolean equations for all these signals that are active when the NOP instruc
 -	EI = 0
 
 We will consider all instructions to be NOP, so if an opcode does not have an associated instruction, it will automatically be treated as a NOP instruction.
-
-By doing so I will be able to test the functionality of the computer using the minimum of electronic components. Thus, by reducing the number of components that enter the structure of a system, we reduce the probability of a defect occurring, and in case we have an implementation error, we reduce the number of blocks that must be tested by default, and we reduce the debugging time.
-
-Result:
--	NEXT = T3
 
 The implementation of the Control Unit block in Logisim is shown in the following figure:
 
