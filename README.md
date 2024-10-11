@@ -93,7 +93,6 @@ The Boolean equations for the signals that are active when the NOP instruction i
 -	CP = NOP * T2
 -	PM = NOP * T2
 -	LI = NOP * T2
--	NEXT = NOP * T3
 
 Since steps T1 and T2 are present and identical in any instruction we can say that they are independent of the executed instruction so we can rewrite the instructions as follows:
 -	EP = T1
@@ -101,7 +100,6 @@ Since steps T1 and T2 are present and identical in any instruction we can say th
 -	CP = T2
 -	PM = T2
 -	LI = T2
--	NEXT = NOP * T3
 
 As can be seen from the diagram in figure 5 and from the Boolean equations to implement the NOP instruction we need the following functional blocks:
 -	Program Counter
@@ -117,8 +115,8 @@ Program Counter has the following input, output and control signals:
 - CLK – clock signal that ensures synchronism in the operation of the computer
 - CLR – reset signal that initializes the Program Counter to zero
 - Ep – output activation for putting data from the Program Counter on the bus
-- Data Input – connects to the bus
-- Data Output – connects to the bus
+- DIN - Data Input – connects to the bus
+- DOUT - Data Output – connects to the bus
 
 The implementation of the Program Counter block in Logisim is shown in the following figure:
 
@@ -129,9 +127,9 @@ Pins W and R, are to indicate when this block is writing or reading from the bus
 
 ## Address Register implementation
 The Address Register has the following input, output and control signals:
-- Lar - load data from the bus in the Address Register
+- LAR - load data from the bus in the Address Register
 - CLK – clock signal that ensures synchronism in the operation of the computer
-- Data Input – connects to the bus
+- DIN - Data Input – connects to the bus
 - ABUS – control output for the address bus
 
 The implementation of the Address Register block in Logisim is shown in the following figure:
@@ -142,12 +140,12 @@ Pin R is to display when this block is reading from the bus.
 
 ## Instruction Register implementation
 The Instruction Register has the following input, output and control signals:
-- Li - loading data from the bus into the Instruction Register
+- LI - loading data from the bus into the Instruction Register
 - CLK – clock signal that ensures synchronism in the operation of the computer
 - CLR – reset signal that initializes the Instruction Register to zero
-- They – enable output to put data from the Instruction Register on the bus
-- Data Input – connects to the bus
-- Data Output – connects to the bus
+- EI – enable output to put data from the Instruction Register on the bus
+- DIN - Data Input – connects to the bus
+- DOUT - Data Output – connects to the bus
 - INSTR – output where the current instruction is presented to the Control Block
 
 The implementation of the Instruction Register block in Logisim is shown in the following figure:
@@ -164,7 +162,7 @@ The Control Unit to control the ISAP-1 computer to execute the NOP instruction h
 - INSTR – entry where the current instruction is presented by the Instruction Register
 - CLK – clock signal that ensures synchronism in the operation of the computer
 - CLR – reset signal that initializes the Control Unit to zero
-- INSTR – output where the current instruction is presented to the Control Block
+- CTRL – output where the current instruction is presented to the Control Block
 - Lar – control signal that commands the loading of data from the bus into the Address Register
 - Cp – control signal that commands the increment of the content of the Program Counter
 - Lp - control signal that commands the loading of data from the bus into the Program Counter
