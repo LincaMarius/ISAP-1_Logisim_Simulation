@@ -325,6 +325,35 @@ Thus we determined the following behavior:
 | Read	   |  1  |  1  | LD set before SEL |
 | Disabled |  0  |  0  |                   |
 
+But I want to use signals used by a real memory chip #CS, #OE and #WE:
+
+|          | #WE | #CS | #OE |
+|----------|-----|-----|-----|
+| Write    |  0  |  0  |  1  |
+| Read	   |  1  |  0  |  0  |
+| Disabled |  1  |  0  |  1  |
+| Disabled |  1  |  1  |  1  |
+
+The ISAP-1 computer uses two active high signals DM and W to control the RAM memory:
+
+|          | DM  |  W  | 
+|----------|-----|-----|
+| Write    |  1  |  1  | 
+| Read	   |  1  |  0  | 
+| Disabled |  0  |  0  | 
+| Disabled |  0  |  1  |
+
+From the first and third tables the following state table results:
+|          |        | SEL | LD  |
+|----------|--------|-----|-----|
+| Write    | DM + W |  1  |  0  |
+| Read	   | DM     |  1  |  1  |
+| Disabled |    -   |  0  |  0  |
+
+LD setat înaintea lui SEL
+
+
+
 ## Update Control Unit for STA instruction implementation
 The Control Unit to control the ISAP-1 computer for the execution of the new STA instruction needs to control in addition the following control signals:
 - DM – connects to the Chip Enable pin of the RAM memory
