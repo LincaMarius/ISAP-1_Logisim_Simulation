@@ -352,7 +352,13 @@ From the first and third tables the following state table results:
 
 LD setat înaintea lui SEL
 
+The following equations result:
+-	SEL = DM
+-	LD = DM * #W
 
+These equations are implemented with the following circuit:
+
+![ Figure 18 ](/Pictures/Figure18.png)
 
 ## Update Control Unit for STA instruction implementation
 The Control Unit to control the ISAP-1 computer for the execution of the new STA instruction needs to control in addition the following control signals:
@@ -380,11 +386,11 @@ We will consider all unimplemented instructions as NOP.
 
 The implementation of the Control Unit block in Logisim for executing the new STA instruction is shown in the following figure:
 
-![ Figure 18 ](/Pictures/Figure18.png)
+![ Figure 19 ](/Pictures/Figure19.png)
 
 The complete schematic of the ISAP-1 computer that correctly executes the new STA instruction is shown in the following figure:
 
-![ Figure 19 ](/Pictures/Figure19.png)
+![ Figure 20 ](/Pictures/Figure20.png)
 
 The following program is loaded into the ROM memory:
 
