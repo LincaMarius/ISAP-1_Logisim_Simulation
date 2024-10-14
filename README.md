@@ -483,3 +483,26 @@ The simulation of this version of the ISAP-1 computer in the Logisim program is 
 
 The ROM contents in my simulation is: [ ROM5](/Logisim/ROM5)
 
+## JMP instruction implementation
+JMP – Unconditional Near Jump to Address n \
+The full description of the implementation of the JMP instruction is here: \
+https://github.com/LincaMarius/ISAP-1_Computer_Instruction_Set#jmp-instruction--unconditional-jump-to-address-n
+
+## Update Control Unit for JMP instruction implementation
+The Control Unit to control the ISAP-1 computer to execute the new JMP instruction does not need any other command signals in addition to the existing ones.
+
+The Boolean equations for the signals that are active when the JMP instruction is executed are:
+-	EI = JMP * T3
+-	LP = JMP * T3
+
+If we take into account the existing signals for the already implemented instructions and add the new signals we get the following equations for the control signals:
+-	EI = LIL * T3 + LIH * T3 + STA * T3 + LDA * T3 + JMP * T3
+-	LP = JMP * T3
+
+We will consider all unimplemented instructions as NOP.
+
+The implementation of the Control Unit block in Logisim for executing the new JMP instruction is shown in the following figure:
+
+![ Figure 23 ](/Pictures/Figure23.png)
+
+
