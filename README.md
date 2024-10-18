@@ -28,15 +28,11 @@ The block diagram of the Central Processing Unit of the ISAP-1 computer is:
 ![ Figure 2 ](/Pictures/Figure2.png)
 
 
-
-
-
-
-
 ## The format of the ISAP-1 computer instructions is:
 
 | 4 bits instruction code   | 4 bits operand (memory address)          |
 |---------------------------|------------------------------------------|
+
 
 ## The main instruction set of the ISAP-1 computer is:
 
@@ -54,49 +50,17 @@ The block diagram of the Central Processing Unit of the ISAP-1 computer is:
 | HLT      | 1111   | Fh  | Stop processing                                               |
 
 ## Implementation of NOP instruction
+The full description of the implementation of the NOP instruction is here: \
+https://github.com/LincaMarius/ISAP-1_Computer_Instruction_Set#nop-instruction--no-operation
 
-The NOP instruction has only the Fetch portion present in all instructions, but has nothing in the execution portion of the instruction. \
-Binary form:  xxxx \
-Operation:  no operation \
-No action is performed. This instruction can be used in programs to delay the execution of an action while waiting for a response from slow peripherals. \
-Example: NOP
-
-The timing diagram for the LDA instruction is as follows:
-
-![ Figure 5 ](/Pictures/Figure5.png)
-
-We can summarize the value of the time control signals shown in this diagram in the following table:
-
-![ Table 1 ](/Pictures/Table1.png)
-
-Signals represented in Red: are active when data is written to the Data BUS \
-Signals represented in Green: are active when reading data from the Data BUS \
-Signals shown in Black: their activation has no influence on the Data BUS
-
-<code style="color : red">If we implement the Control Block using a ROM memory, the data in this table will be used to realize its content.</code>
-
-The Boolean equations for the signals that are active when the NOP instruction is executed are:
--	EP = NOP * T1
--	LAR = NOP * T1
--	CP = NOP * T2
--	PM = NOP * T2
--	LI = NOP * T2
-
-Since steps T1 and T2 are present and identical in any instruction we can say that they are independent of the executed instruction so we can rewrite the instructions as follows:
--	EP = T1
--	LAR = T1
--	CP = T2
--	PM = T2
--	LI = T2
-
-As can be seen from the diagram in figure 5 and from the Boolean equations to implement the NOP instruction we need the following functional blocks:
+As can be seen from the diagram in [figure 2](/Pictures/Figure2.png) and from the Boolean equations presented in the link above, to implement the NOP instruction we need the following functional blocks:
 -	Program Counter
 -	Address Register
 -	Program Memory as ROM Memory
 -	Instruction Register
 -	Control Unit
 
-## Program Counter implementation
+### Program Counter implementation
 Program Counter has the following input, output and control signals:
 - CP – Program Counter content increment
 - LP - loading data from the bus into the Program Counter
