@@ -23,23 +23,15 @@ The final structure of the ISAP-1 computer is:
 
 ![ Figure 1 ](/Pictures/Figure1.png)
 
-The final block diagram of the Computer Memory system is:
+The block diagram of the Central Processing Unit of the ISAP-1 computer is:
 
 ![ Figure 2 ](/Pictures/Figure2.png)
 
-The final block diagram of the Input system of this computer is:
 
-![ Figure 3 ](/Pictures/Figure3.png)
 
-We will have an input device in the form of a binary keyboard.
-Program memory bank register is an input-output device.
 
-The final block diagram of the Output system of this computer is:
 
-![ Figure 4 ](/Pictures/Figure4.png)
 
-The output device is the old Output Register, but modified by having access to the address bus.
-Thus, we can control the display format (unsigned, signed, hexadecimal, text), by sending commands to the output device on port 1, and data is sent on port 0.
 
 ## The format of the ISAP-1 computer instructions is:
 
