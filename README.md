@@ -72,7 +72,7 @@ Program Counter has the following input, output and control signals:
 
 The implementation of the Program Counter block in Logisim is shown in the following figure:
 
-![ Figure 6 ](/Pictures/Figure6.png)
+![ Figure 3 ](/Pictures/Figure3.png)
 
 The PROBE pins are used to view the contents of the block regardless of whether the output is in tri-state mode. \
 Pins W and R, are to indicate when this block is writing or reading from the bus.
