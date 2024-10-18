@@ -90,7 +90,7 @@ The implementation of the Address Register block in Logisim is shown in the foll
 
 Pin R is to display when this block is reading from the bus.
 
-## Instruction Register implementation
+### Instruction Register implementation
 The Instruction Register has the following input, output and control signals:
 - LI - loading data from the bus into the Instruction Register
 - CLK – clock signal that ensures synchronism in the operation of the computer
