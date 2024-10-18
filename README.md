@@ -102,7 +102,7 @@ The Instruction Register has the following input, output and control signals:
 
 The implementation of the Instruction Register block in Logisim is shown in the following figure:
 
-![ Figure 8 ](/Pictures/Figure8.png)
+![ Figure 5 ](/Pictures/Figure5.png)
 
 The PROBE pins are used to view the contents of the block regardless of whether the output is in tri-state mode. \
 Pins W and R, are to indicate when this block is writing or reading from the bus. \
