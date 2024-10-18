@@ -86,7 +86,7 @@ The Address Register has the following input, output and control signals:
 
 The implementation of the Address Register block in Logisim is shown in the following figure:
 
-![ Figure 7 ](/Pictures/Figure7.png)
+![ Figure 4 ](/Pictures/Figure4.png)
 
 Pin R is to display when this block is reading from the bus.
 
