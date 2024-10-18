@@ -17,7 +17,7 @@ This project is a continuation of other projects made by me:
 https://github.com/LincaMarius/ISAP-Computer \
 https://github.com/LincaMarius/ISAP-1_Computer_Instruction_Set
 
-where we optimized the SAP-1 calculator at the block diagram level and at the instruction level.
+where we optimized the SAP-1 calculator at the block diagram level and at the Instruction Set level.
 
 The final structure of the ISAP-1 computer is:
 
