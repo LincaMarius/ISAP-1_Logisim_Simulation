@@ -138,11 +138,19 @@ We will consider all instructions to be NOP, so if an opcode does not have an as
 
 By doing so I will be able to test the functionality of the computer using the minimum of electronic components. Thus, by reducing the number of components that enter the structure of a system, we reduce the probability of a defect occurring, and in case we have an implementation error, we reduce the number of blocks that must be tested by default, and we reduce the debugging time.
 
-The implementation of the Control Unit block in Logisim is shown in the following figure:
+The implementation of the Control Unit block in Logisim using Combinational Logic according to the above Boolean formulas is shown in the following figure:
 
-![ Figure 9 ](/Pictures/Figure9.png)
+![ Figure 6 ](/Pictures/Figure6.png)
+
+The implementation of the Control Unit block in Logisim using a ROM Memory according to [ Table 1](/ Pictures/Table1.png) from the above link is shown in the following figure:
+
+![ Figure 7 ](/Pictures/Figure7.png)
 
 Since all instructions are considered as the NOP instruction, we will have a maximum number of steps equal to 2, the NEXT signal resets the Step Counter in step T3.
+
+
+
+
 
 The complete schematic of the ISAP-1 computer that correctly executes the NOP instruction is shown in the following figure:
 
