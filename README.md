@@ -142,7 +142,7 @@ The implementation of the Control Unit block in Logisim using Combinational Logi
 
 ![ Figure 6 ](/Pictures/Figure6.png)
 
-The implementation of the Control Unit block in Logisim using a ROM Memory according to [ Table 1](/ Pictures/Table1.png) from the above link is shown in the following figure:
+The implementation of the Control Unit block in Logisim using a ROM Memory according to [Table 1](https://github.com/LincaMarius/ISAP-1_Computer_Instruction_Set/blob/main/Pictures/Table1.png) from the above link is shown in the following figure:
 
 ![ Figure 7 ](/Pictures/Figure7.png)
 
