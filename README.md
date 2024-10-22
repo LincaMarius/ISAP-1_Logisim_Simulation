@@ -43,9 +43,10 @@ The block diagram of the Central Processing Unit of the ISAP-1 computer is:
 | SUB      | 0010   | 2h  | Substract RAM data from accumulator                           |
 | LIL      | 0011   | 3h  | Load immediate value into the lower nibble of the Accumulator |
 | LIH      | 0100   | 4h  | Load immediate value into the upper nibble of the Accumulator |
-| IN       | 0101   | 5h  | Input data from port p into the Accumulator                   |
-| JMP      | 0110   | 6h  | Unconditional jump to address n                               |
-| STA      | 0111   | 7H  | Store Accumulator data into RAM                               |
+| STA      | 0101   | 5H  | Store Accumulator data into RAM                               |
+| CMP      | 0110   | 6H  | Compare RAM data with Accumulator                             |
+| JMP      | 1100   | Ch  | Unconditional jump to address n                               |
+| IN       | 1101   | Dh  | Input data from port p into the Accumulator                   |
 | OUT      | 1110   | Eh  | Load Accumulator data into Output Register                    |
 | HLT      | 1111   | Fh  | Stop processing                                               |
 
