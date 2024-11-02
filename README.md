@@ -151,6 +151,19 @@ The implementation of the Control Unit block in Logisim using Combinational Logi
 
 ![ Figure 6 ](/Pictures/Figure6.png)
 
+The Step Counter is a 3-bit counter, so we can have a maximum of 8 micro-steps.
+
+The step decoder has 8 outputs labeled T1 to T8. The drivers connected to the output are to make the Logisim program happy which in their absence shows an error.
+
+This implementation has all outputs grouped together. 
+
+I propose their separation. We grouped the control signals into three groups:
+- Control signals that cause a function block to write to the bus, at any given time only one such signal must be active
+- Control signals that cause a function block to read data from the bus
+- Signals that modify the functionality of the modules and usually may not be related to bus-related operations
+
+
+
 The implementation of the Control Unit block in Logisim using a ROM Memory according to [Table 1](https://github.com/LincaMarius/ISAP-1_Computer_Instruction_Set/blob/main/Pictures/Table1.png) from the above link is shown in the following figure:
 
 ![ Figure 7 ](/Pictures/Figure7.png)
