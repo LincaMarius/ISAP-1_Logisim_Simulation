@@ -1,7 +1,7 @@
 # ISAP-1 Computer simulation in Logisim
 The improved version of the SAP-1 computer.
 
-This is the process of optimizing the functionality of the SAP-1 computer at the instruction set level, which I went through.
+This is the process of making the ISAP-1 computer at the simulation level using the Logisim program, presented step by step
 
 By: Lincă Marius Gheorghe.
 
@@ -34,7 +34,7 @@ The block diagram of the Central Processing Unit of the ISAP-1 computer is:
 |---------------------------|------------------------------------------|
 
 
-## The main instruction set of the ISAP-1 computer is:
+## The Main Instruction Set of the ISAP-1 computer is:
 
 | Mnemonic | Opcode | Hex | Operation                                                     |
 |----------|--------|-----|---------------------------------------------------------------|
@@ -48,7 +48,15 @@ The block diagram of the Central Processing Unit of the ISAP-1 computer is:
 | JMP      | 1100   | Ch  | Unconditional jump to address n                               |
 | IN       | 1101   | Dh  | Input data from port p into the Accumulator                   |
 | OUT      | 1110   | Eh  | Load Accumulator data into Output Register                    |
-| HLT      | 1111   | Fh  | Stop processing                                               |
+
+## The Extended Instruction Set of the ISAP-1 computer is:
+
+| Mnemonic | Opcode    | Hex | Operation                                                       |
+|----------|-----------|-----|-----------------------------------------------------------------|
+| NOP      | 1111 0000 | F0h | No Operation                                                    |
+| CPY	   | 1111 1110 | Feh | Copy the contents of the Accumulator register in the B register |
+| HLT	   | 1111 1111 | FFh | Stop processing	                                               |
+
 
 ## Implementation of NOP instruction
 The full description of the implementation of the NOP instruction is here: \
