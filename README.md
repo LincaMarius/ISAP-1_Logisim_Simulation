@@ -200,6 +200,20 @@ The required ROM capacity is 256 x 8 = 2k Bytes.
 By using the data from the link above and following the steps described we obtain the following table: \
 [ Table 1 ](/Tables/Table1.png)
 
+In these tables we have the synthesis of the data used to determine the content of the ROM memory that is part of the Control Block to execute only the NOP instruction.
+
+Columns O, N, M, L, K, J, I , H represent the step being executed for the current microinstruction. The hexadecimal representation of the step is in column S, and the binary representation in columns R, Q, and P. The binary form of the Step being executed represents the values ​​for address bits A0, A1, and A2.
+
+The binary code of the instruction being executed is represented in columns G, F, E, and D. These values correspond to address bits A3, A4, A5, and A6.
+
+If an extended instruction is executed the EXT bit will be high. This bit controls address bit A7.
+
+The value for the address is automatically calculated and displayed on the T and AH columns.
+
+The control lines are connected to data bits D0 – D7 and can be seen on columns AB – U. The hexadecimal value to be written to each address is automatically calculated and displayed on columns AF and AI.
+
+The complete form of the table is presented below
+
 
 
 
