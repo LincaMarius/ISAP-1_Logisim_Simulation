@@ -224,7 +224,7 @@ The implementation of the Control Unit block in Logisim using a ROM Memory as sh
 
 The complete schematic of the ISAP-1 computer that correctly executes the NOP instruction is shown in the following figure:
 
-![ Figure 10 ](/Pictures/Figure10.png)
+![ Figure 9 ](/Pictures/Figure9.png)
 
 The red LED indicates that the respective block is writing to the data bus
 The green LED indicates that the respective block is reading data from the data bus.
@@ -232,11 +232,11 @@ The green LED indicates that the respective block is reading data from the data 
 The system has been tested and is working properly.
 
 The simulation in the Logisim program is in the file:
-[ ISAP-1_v1.circ ](/Logisim/ISAP-1_v1.circ)
+[ ISAP-1_ver_01.circ ](/Logisim/ISAP-1_ver_01.circ)
 
 The contents of the ROM memory can be anything, and we can even test the system without connecting any device to the CPU buses. We will have a system that continuously increments the address.
 
-The ROM contents in my simulation is: [ ROM1](/Logisim/ROM1)
+The ROM contents in my simulation is: [ ROM1](/Logisim/ROM1). Control ROM content is: [ CTRLROM1](/Logisim/CTRLROM1).
 
 ## LIL instruction implementation
 LIL – Load immediate value into lower nibble of Accumulator. \
