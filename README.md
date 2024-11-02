@@ -218,7 +218,9 @@ The complete form of the table is presented below
 [ Table 2 - photo](/Tables/Table2.png) \
 [ Table 2 - Excel](/Tables/Table2.xlsx)
 
+The implementation of the Control Unit block in Logisim using a ROM Memory as shown above is:
 
+![ Figure 8 ](/Pictures/Figure8.png)
 
 The complete schematic of the ISAP-1 computer that correctly executes the NOP instruction is shown in the following figure:
 
