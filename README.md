@@ -198,7 +198,8 @@ There are 8 control signals in total. So, we can use a standard ROM with 8 bits 
 The required ROM capacity is 256 x 8 = 2k Bytes.
 
 By using the data from the link above and following the steps described we obtain the following table: \
-[ Table 1 ](/Tables/Table1.png)
+[ Table 1 - photo](/Tables/Table1.png) \
+[ Table 1 - Excel](/Tables/Table1.xlsx)
 
 In these tables we have the synthesis of the data used to determine the content of the ROM memory that is part of the Control Block to execute only the NOP instruction.
 
@@ -214,9 +215,8 @@ The control lines are connected to data bits D0 – D7 and can be seen on column
 
 The complete form of the table is presented below
 
-
-
-
+[ Table 2 - photo](/Tables/Table2.png) \
+[ Table 2 - Excel](/Tables/Table2.xlsx)
 
 The complete schematic of the ISAP-1 computer that correctly executes the NOP instruction is shown in the following figure:
 
