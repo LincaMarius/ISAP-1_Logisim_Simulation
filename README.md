@@ -157,10 +157,22 @@ The step decoder has 8 outputs labeled T1 to T8. The drivers connected to the ou
 
 This implementation has all outputs grouped together. 
 
+This implementation has all outputs grouped together.
 I propose their separation. We grouped the control signals into three groups:
-- Control signals that cause a function block to write to the bus, at any given time only one such signal must be active
-- Control signals that cause a function block to read data from the bus
-- Signals that modify the functionality of the modules and usually may not be related to bus-related operations
+- Control signals that cause a function block to write to the bus, at any given time only one such signal must be active: EP, PM, EI;
+- Control signals that cause a function block to read data from the bus: LAR, LI, LP;
+- Signals that modify the functionality of the modules and usually may not be related to bus-related operations: CP, NEXT.
+
+I entered the NEXT control signal. This is to move to the next instruction if the current instruction has completed all steps, by resetting the Step Counter. This modification has the role of increasing the speed of instruction execution, provides variable length of microinstructions.
+
+For example, in the case of the NOP instruction, steps T1 and T2 are used, that is, 2 out of 8 micro-steps are useful, the remaining 6 micro-steps are wasted time. This fact represents an efficiency of 2/8 = 0.25, i.e. 25%.
+By using the use of the control signal noted NEXT we have T1 and T2 useful micro-steps and T3 for counter reset. So the efficiency is 2/3 = 0.67, which is 67% efficiency.
+
+The optimized control block has the diagram shown in figure 7:
+
+![ Figure 7 ](/Pictures/Figure7.png)
+
+
 
 
 
