@@ -174,10 +174,7 @@ The optimized control block has the diagram shown in figure 7:
 
 ### Implementation of the Control Unit using a ROM memory
 
-
-The implementation of the Control Unit block in Logisim using a ROM Memory according to [Table 1](https://github.com/LincaMarius/ISAP-1_Computer_Instruction_Set/blob/main/Pictures/Table1.png) from the above link is shown in the following figure:
-
-![ Figure 7 ](/Pictures/Figure7.png)
+The implementation of the Control Unit block in Logisim using a ROM Memory according to [Table 1](https://github.com/LincaMarius/ISAP-1_Computer_Instruction_Set/blob/main/Pictures/Table1.png).
 
 Since all instructions are considered as the NOP instruction, we will have a maximum number of steps equal to 2, the NEXT signal resets the Step Counter in step T3.
 
@@ -199,6 +196,11 @@ So, we need a memory that has 8 addresses, so 2^8 = 256 memory locations. \
 The control signals are: EP, PM, EI, LAR, LI, LP, CP and NEXT. \
 There are 8 control signals in total. So, we can use a standard ROM with 8 bits of data. \
 The required ROM capacity is 256 x 8 = 2k bytes.
+
+
+[ Table 1 ](/Tables/Table1.xlsx)
+
+
 
 
 
