@@ -195,9 +195,9 @@ This bit will be the most significant bit of the ROM address, bit A7.
 So, we need a memory that has 8 addresses, so 2^8 = 256 memory locations. \
 The control signals are: EP, PM, EI, LAR, LI, LP, CP and NEXT. \
 There are 8 control signals in total. So, we can use a standard ROM with 8 bits of data. \
-The required ROM capacity is 256 x 8 = 2k bytes.
+The required ROM capacity is 256 x 8 = 2k Bytes.
 
-
+By using the data from the link above and following the steps described we obtain the following table: \
 [ Table 1 ](/Tables/Table1.xlsx)
 
 
