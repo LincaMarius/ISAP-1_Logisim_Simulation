@@ -155,7 +155,7 @@ The Step Counter is a 3-bit counter, so we can have a maximum of 8 micro-steps.
 
 The step decoder has 8 outputs labeled T1 to T8. The drivers connected to the output are to make the Logisim program happy which in their absence shows an error.
 
-This implementation has all outputs grouped together. 
+### Improved control unit implementation
 
 This implementation has all outputs grouped together.
 I propose their separation. We grouped the control signals into three groups:
@@ -172,8 +172,7 @@ The optimized control block has the diagram shown in figure 7:
 
 ![ Figure 7 ](/Pictures/Figure7.png)
 
-
-
+### Implementation of the Control Unit using a ROM memory
 
 
 The implementation of the Control Unit block in Logisim using a ROM Memory according to [Table 1](https://github.com/LincaMarius/ISAP-1_Computer_Instruction_Set/blob/main/Pictures/Table1.png) from the above link is shown in the following figure:
@@ -182,7 +181,24 @@ The implementation of the Control Unit block in Logisim using a ROM Memory accor
 
 Since all instructions are considered as the NOP instruction, we will have a maximum number of steps equal to 2, the NEXT signal resets the Step Counter in step T3.
 
+The question arises - what characteristics must the used memory have?
 
+The first information needed is given by how many micro-steps are needed to correctly execute the most complex instruction. We have 3 bits encoding micro-steps T1 – T8.
+
+These 3 bits will control the least significant bits of the ROM address, namely bits A0, A1, A2.
+
+The following information is given by the binary code of the instruction being executed. The ISAP-1 computer has 4-bit coded instructions. These will control address bits A3, A4, A5 and A6.
+
+We also implement a set of extended instructions that have no parameters and can be detected by the fact that the most significant 4 bits of the instruction are high. 
+
+Thus, we will have one more bit to allow us to distinguish between normal instructions and extended instructions.
+
+This bit will be the most significant bit of the ROM address, bit A7.
+
+So, we need a memory that has 8 addresses, so 2^8 = 256 memory locations. \
+The control signals are: EP, PM, EI, LAR, LI, LP, CP and NEXT. \
+There are 8 control signals in total. So, we can use a standard ROM with 8 bits of data. \
+The required ROM capacity is 256 x 8 = 2k bytes.
 
 
 
