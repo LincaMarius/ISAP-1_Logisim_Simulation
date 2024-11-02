@@ -198,7 +198,7 @@ There are 8 control signals in total. So, we can use a standard ROM with 8 bits 
 The required ROM capacity is 256 x 8 = 2k Bytes.
 
 By using the data from the link above and following the steps described we obtain the following table: \
-[ Table 1 ](/Tables/Table1.xlsx)
+[ Table 1 ](/Tables/Table1.png)
 
 
 
