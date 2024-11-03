@@ -243,7 +243,7 @@ The ROM contents in my simulation is: [ ROM1](/Logisim/Version_01/ROM1).
 ## LIL instruction implementation
 LIL – Load immediate value into lower nibble of Accumulator. \
 The full description of the implementation of the LIL instruction is here: \
-https://github.com/LincaMarius/ISAP-1_Computer_Instruction_Set#lil-instruction--load-immediate-value-into-lower-nible-of-accumulator \
+https://github.com/LincaMarius/ISAP-1_Computer_Instruction_Set#lil-instruction--load-immediate-value-into-lower-nibble-of-accumulator
 
 To implement the LIL instruction at the simulation level we must first implement the Accumulator register.
 
