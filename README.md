@@ -134,154 +134,28 @@ Pins W and R, are to indicate when this block is writing or reading from the bus
 The INSTR pin presents the current instruction to the Control Block where it is decoded.
 
 
-### Control Unit Implementation
-The Control Unit to control the ISAP-1 computer to execute the NOP instruction has the following input, output and control signals:
-- INSTR – entry where the current instruction is presented by the Instruction Register
-- CLK – clock signal that ensures synchronism in the operation of the computer
-- CLR – reset signal that initializes the Control Unit to zero
-- CTRL – output where the control signals are presented
-
-These control signals are:
-- Lar – control signal that commands the loading of data from the bus into the Address Register
-- Cp – control signal that commands the increment of the content of the Program Counter
-- Lp - control signal that commands the loading of data from the bus into the Program Counter
-- Ep – control signal that commands the activation of the outputs to put the data from the Program Counter on the bus
-- Li - control signal that commands the loading of data from the bus into the Instruction Register
-- Ei – control signal that commands the activation of the outputs to put the data from the Instruction Register on the bus
-- Pm – control signal that commands the activation of the outputs to put data from the ROM Program Memory on the bus
-
-The Boolean equations for all these signals that are active when the NOP instruction is executed are:
--	EP = T1
--	LAR = T1
--	PM = T2
--	LI = T2
--	CP = T2
--	LP = 0
--	EI = 0
-
-We will consider all instructions to be NOP, so if an opcode does not have an associated instruction, it will automatically be treated as a NOP instruction.
-
-By doing so I will be able to test the functionality of the computer using the minimum of electronic components. Thus, by reducing the number of components that enter the structure of a system, we reduce the probability of a defect occurring, and in case we have an implementation error, we reduce the number of blocks that must be tested by default, and we reduce the debugging time.
-
-The implementation of the Control Unit block in Logisim using Combinational Logic according to the above Boolean formulas is shown in the following figure:
-
-![ Figure 6 ](/Pictures/Figure6.png)
-
-The Step Counter is a 3-bit counter, so we can have a maximum of 8 micro-steps.
-
-The step decoder has 8 outputs labeled T1 to T8. The drivers connected to the output are to make the Logisim program happy which in their absence shows an error.
-
-### Improved control unit implementation
-
-This implementation has all outputs grouped together.
-I propose their separation. We grouped the control signals into three groups:
-- Control signals that cause a function block to write to the bus, at any given time only one such signal must be active: EP, PM, EI;
-- Control signals that cause a function block to read data from the bus: LAR, LI, LP;
-- Signals that modify the functionality of the modules and usually may not be related to bus-related operations: CP, NEXT.
-
-I entered the NEXT control signal. This is to move to the next instruction if the current instruction has completed all steps, by resetting the Step Counter. This modification has the role of increasing the speed of instruction execution, provides variable length of microinstructions.
-
-For example, in the case of the NOP instruction, steps T1 and T2 are used, that is, 2 out of 8 micro-steps are useful, the remaining 6 micro-steps are wasted time. This fact represents an efficiency of 2/8 = 0.25, i.e. 25%.
-By using the use of the control signal noted NEXT we have T1 and T2 useful micro-steps and T3 for counter reset. So the efficiency is 2/3 = 0.67, which is 67% efficiency.
-
-The optimized control block has the diagram shown in figure 7:
-
-![ Figure 7 ](/Pictures/Figure7.png)
-
-### Implementation of the Control Unit using a ROM memory
-
-The implementation of the Control Unit block in Logisim using a ROM Memory according to [Table 1](https://github.com/LincaMarius/ISAP-1_Computer_Instruction_Set/blob/main/Pictures/Table1.png).
-
-Since all instructions are considered as the NOP instruction, we will have a maximum number of steps equal to 2, the NEXT signal resets the Step Counter in step T3.
-
-The question arises - what characteristics must the used memory have?
-
-The first information needed is given by how many micro-steps are needed to correctly execute the most complex instruction. We have 3 bits encoding micro-steps T1 – T8.
-
-These 3 bits will control the least significant bits of the ROM address, namely bits A0, A1, A2.
-
-The following information is given by the binary code of the instruction being executed. The ISAP-1 computer has 4-bit coded instructions. These will control address bits A3, A4, A5 and A6.
-
-We also implement a set of extended instructions that have no parameters and can be detected by the fact that the most significant 4 bits of the instruction are high. 
-
-Thus, we will have one more bit to allow us to distinguish between normal instructions and extended instructions.
-
-This bit will be the most significant bit of the ROM address, bit A7.
-
-So, we need a memory that has 8 addresses, so 2^8 = 256 memory locations. \
-The control signals are: EP, PM, EI, LAR, LI, LP, CP and NEXT. \
-There are 8 control signals in total. So, we can use a standard ROM with 8 bits of data. \
-The required ROM capacity is 256 x 8 = 2k Bytes.
-
-By using the data from the link above and following the steps described we obtain the following table: \
-[ Table 1 - photo](/Tables/Table1.png) \
-[ Table 1 - Excel](/Tables/Table1.xlsx)
-
-In these tables we have the synthesis of the data used to determine the content of the ROM memory that is part of the Control Block to execute only the NOP instruction.
-
-Columns O, N, M, L, K, J, I , H represent the step being executed for the current microinstruction. The hexadecimal representation of the step is in column S, and the binary representation in columns R, Q, and P. The binary form of the Step being executed represents the values ​​for address bits A0, A1, and A2.
-
-The binary code of the instruction being executed is represented in columns G, F, E, and D. These values correspond to address bits A3, A4, A5, and A6.
-
-If an extended instruction is executed the EXT bit will be high. This bit controls address bit A7.
-
-The value for the address is automatically calculated and displayed on the T and AH columns.
-
-The control lines are connected to data bits D0 – D7 and can be seen on columns AB – U. The hexadecimal value to be written to each address is automatically calculated and displayed on columns AF and AI.
-
-The complete form of the table is presented below
-
-[ Table 2 - photo](/Tables/Table2.png) \
-[ Table 2 - Excel](/Tables/Table2.xlsx)
-
-The implementation of the Control Unit block in Logisim using a ROM Memory as shown above is:
-
-![ Figure 8 ](/Pictures/Figure8.png)
-
-Control ROM content is: [ CTRLROM1](/Logisim/Version_01/CTRLROM1).
-
-The complete schematic of the ISAP-1 computer that correctly executes the NOP instruction is shown in the following figure:
-
-![ Figure 9 ](/Pictures/Figure9.png)
-
-The red LED indicates that the respective block is writing to the data bus
-The green LED indicates that the respective block is reading data from the data bus.
-
-The system has been tested and is working properly.
-
-The simulation in the Logisim program is in the file:
-[ ISAP-1_ver_01.circ ](/Logisim/Version_01/ISAP-1_ver_01.circ)
-
-The contents of the ROM memory can be anything, and we can even test the system without connecting any device to the CPU buses. We will have a system that continuously increments the address.
-
-The ROM contents in my simulation is: [ ROM1](/Logisim/Version_01/ROM1).
-
-## LIL instruction implementation
-LIL – Load immediate value into lower nibble of Accumulator. \
-The full description of the implementation of the LIL instruction is here: \
-https://github.com/LincaMarius/ISAP-1_Computer_Instruction_Set#lil-instruction--load-immediate-value-into-lower-nibble-of-accumulator
-
-To implement the LIL instruction at the simulation level we must first implement the Accumulator register.
-
 ## Implementation of the Accumulator Register
 The Accumulator register has the following input, output and control signals:
+- LAH - loading data from the bus into the upper Nibble Accumulator Register
+- LAL - load data from the bus into the lower Nibble Accumulator Register
 - CLK – clock signal that ensures synchronism in the operation of the computer
 - EA – output activation for putting data from the Accumulator Register on the bus
-- DIN - Data Input – connects to the bus
-- DOUT - Data Output – connects to the bus
+- Data Input – connects to the bus
+- Data Output – connects to the bus
 - ALUA – the contents of the Accumulator connect to the Logical and Arithmetic Unit
-
-Implementation of the LIL instruction requires the Accumulator Block to have the LAL control signal:
-- LAL - loading data from the bus into the Accumulator Register in the lower nibble
-
-Implementation of the LIH instruction requires the Accumulator Block to have the LAH control signal:
-- LAH - loading data from the bus into the Accumulator Register in the upper nibble
 
 The implementation of the Accumulator Register block in Logisim is shown in the following figure:
 
-![ Figure 11 ](/Pictures/Figure11.png)
+![ Figure 6 ](/Pictures/Figure6.png)
 
-Now the Control Block must be modified to implement the control signals for the LIL instruction
+The Accumulator register is implemented with two 4-bit registers that independently store the lower nibble when the control signal LAL is high and the rising edge of the clock signal occurs, or the upper nibble when the control signal LAH is high and the rising edge of the clock signal occurs. 
+
+The output is provided by a three-state buffer and is active only when the EA control signal is high.
+
+The PROBE pin is used to view the contents of the block regardless of whether the output is in tri-state mode.
+
+Pins W and R, are to indicate when this block is writing or reading from the bus.
+
 
 ## Update Control Unit
 The Control Unit to control the ISAP-1 computer to execute the NOP instruction and the LIL instruction additionally has the following input, output and control signals necessary to control the Accumulator block:
