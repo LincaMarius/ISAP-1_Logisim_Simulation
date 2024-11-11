@@ -180,15 +180,24 @@ Pin R is to display when this block is reading from the bus.
 The Arithmetic and Logic Unit has the following input, output and control signals:
 - ALUA – the contents of the Accumulator Register are connected to the Logical and Arithmetic Unit as operand A
 - ALUB – the contents of Register B are connected to the Logical and Arithmetic Unit as operand B
-- SU - Subtraction – control signal that orders the subtraction operation to be performed instead of addition
+- SU - Subtract – control signal that orders the subtraction operation to be performed if it is high
 - EU - control signal that commands the activation of the outputs to put on the bus the result of the arithmetic operation performed
-- FS - control signal that commands the selection of the Flag that is checked when a jump instruction is executed.
 - DOUT - Data Output – connects to the bus
-- F – output signal showing the state of the selected Flag
+- FLAGS – output signal showing the state of the Flags
 
 The implementation of the Arithmetic and Logical Unit in Logisim is shown in the following figure:
 
-![ Figure 25 ](/Pictures/Figure25.png)
+![ Figure 8 ](/Pictures/Figure8.png)
+
+The Arithmetic and Logic Unit has as its main element an 8-bit Adder. The addition calculation is performed continuously.
+
+The Subtraction operation is done by inverting the value of operand B (one's complement) and adds one by applying the SU signal to the Carry In input (two's complement).
+
+The output to the Bus is provided by a three-state buffer and is active only when the EU control signal is high.
+
+The state of the Flags is stored in a 3-bit register and passed to the Control Block to help execute conditional jump instructions.
+
+The W pin has the role of displaying when this block is writing to the bus.
 
 
 
