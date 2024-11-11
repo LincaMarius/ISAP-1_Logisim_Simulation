@@ -53,14 +53,21 @@ The block diagram of the Central Processing Unit of the ISAP-1 computer is:
 | OUT      | 1110   | Eh  |   4   | Load Accumulator data into Output Register                    |
 | -        | 1111   | Fh  |   -   | Prefix for extended instruction set                           |
 
+In total, 13 out of 15 possible instructions are implemented.
+
 
 ## The Extended Instruction Set of the ISAP-1 computer is:
 
-| Mnemonic | Opcode    | Hex | Operation                                                       |
-|----------|-----------|-----|-----------------------------------------------------------------|
-| NOP      | 1111 0000 | F0h | No Operation                                                    |
-| CPY	   | 1111 1110 | Feh | Copy the contents of the Accumulator register in the B register |
-| HLT	   | 1111 1111 | FFh | Stop processing	                                               |
+| Mnemonic | Opcode    | Hex | Steps | Operation                                 |
+|----------|-----------|-----|---------------------------------------------------|
+| NOP      | 1111 0000 | F0h |   2   | No Operation                              |
+| INC      | 1111 0001 | F1h |   4   | Increment the contents of the Accumulator |
+| DEC      | 1111 0010 | F2h |   4   | Decrement the contents of the Accumulator |
+| NEG      | 1111 0011 | F3h |   5   | Negate Accumulator                        |
+| CPY      | 1111 1110 | FEh |   3   | Copy Accumulator data into B register     |
+| HLT      | 1111 1111 | FFh |   2   | Stop processing                           |
+
+In total, 6 extended instructions out of 16 possible are implemented.
 
 
 ## Implementation of NOP instruction
