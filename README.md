@@ -109,7 +109,7 @@ The output of this register is connected to 4 bits of the Address Bus through a 
 
 Pin R is to display when this block is reading from the bus.
 
-### Instruction Register implementation
+## Instruction Register implementation
 The Instruction Register has the following input, output and control signals:
 - LI - loading data from the bus into the Instruction Register
 - CLK – clock signal that ensures synchronism in the operation of the computer
@@ -123,10 +123,16 @@ The implementation of the Instruction Register block in Logisim is shown in the 
 
 ![ Figure 5 ](/Pictures/Figure5.png)
 
-The PROBE pins are used to view the contents of the block regardless of whether the output is in tri-state mode. \
-Pins W and R, are to indicate when this block is writing or reading from the bus. \
+The Instruction Register is implemented with an 8-bit register and stores 8 bits of data received from the Bus when the control signal LI is active and the rising edge of the clock signal occurs.
 
-The lower nibble from the Instruction Register is presented on the output to the BUS for both the lower nibble and the upper nibble, this allows the implementation of LIL instructions which load an immediate value into the lower nibble of the Accumulator, but also of the LIH instruction which loads an immediate value into the upper nibble of the Accumulator.
+The lower nibble stored in the Instruction Register is output on the bus for both the lower nibble and the upper nibble, this allows implementation of LIL instructions that load an immediate value into the lower nibble of the Accumulator but also the LIH instruction which loads an immediate value into the upper nibble of the Accumulator. The output is tri-stated by using an 8-bit buffer and is active only when the EI control signal is high.
+
+The PROBE pin are used to view the contents of the block regardless of whether the output is in tri-state mode.
+
+Pins W and R, are to indicate when this block is writing or reading from the bus.
+
+The INSTR pin presents the current instruction to the Control Block where it is decoded.
+
 
 ### Control Unit Implementation
 The Control Unit to control the ISAP-1 computer to execute the NOP instruction has the following input, output and control signals:
