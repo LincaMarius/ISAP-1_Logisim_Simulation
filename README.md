@@ -157,85 +157,43 @@ The PROBE pin is used to view the contents of the block regardless of whether th
 Pins W and R, are to indicate when this block is writing or reading from the bus.
 
 
-## Update Control Unit
-The Control Unit to control the ISAP-1 computer to execute the NOP instruction and the LIL instruction additionally has the following input, output and control signals necessary to control the Accumulator block:
-- LAL - control signal that commands the loading of data from the bus into the Accumulator Register in the lower nibble
-- LAH - control signal that commands the loading of data from the bus into the Accumulator Register in the upper nibble
-- EA – control signal that commands the activation of the outputs to put the data from the Accumulator Register on the bus
+## Register B implementation
+Register B has the following input, output and control signals:
+- LB - loading data from the bus into Register B
+- CLK – clock signal that ensures synchronism in the operation of the computer
+- DIN - Data Input – connects to the bus
+- DOUT - Data Output – connects to the bus
+- ALUB – the contents of Register B connect to the Logical and Arithmetic Unit
 
-The Boolean equations for all these signals that are active when the NOP instruction and the LIL instruction are executed are:
--	LAL = LIL * T3
--	EI = LIL * T3
+The implementation of the Register B block in Logisim is shown in the following figure:
 
-We will consider all unimplemented instructions as NOP.
+![ Figure 7 ](/Pictures/Figure7.png)
 
-The implementation of the Control Unit block in Logisim for the execution of the LIL instruction is shown in the following figure:
+## Arithmetic and Logic Unit Implementation
+The Arithmetic and Logic Unit has the following input, output and control signals:
+- ALUA – the contents of the Accumulator Register are connected to the Logical and Arithmetic Unit as operand A
+- ALUB – the contents of Register B are connected to the Logical and Arithmetic Unit as operand B
+- SU - Subtraction – control signal that orders the subtraction operation to be performed instead of addition
+- EU - control signal that commands the activation of the outputs to put on the bus the result of the arithmetic operation performed
+- FS - control signal that commands the selection of the Flag that is checked when a jump instruction is executed.
+- DOUT - Data Output – connects to the bus
+- F – output signal showing the state of the selected Flag
 
-![ Figure 12 ](/Pictures/Figure12.png)
+The implementation of the Arithmetic and Logical Unit in Logisim is shown in the following figure:
 
-Since the complexity of the Control Block increases, I propose grouping the output signals into three distinct groups:
-- command signals that will cause a function block to put data on the bus
-- command signals that will cause a function block to read data from the bus
-- command signals that will control an action of a functional block that has no effect on the data bus
+![ Figure 25 ](/Pictures/Figure25.png)
 
-The optimized implementation of the Control Unit block in Logisim for the optimized LIL execution is shown in the following figure:
 
-![ Figure 13 ](/Pictures/Figure13.png)
 
-Since all unimplemented instructions are considered as a NOP instruction, we will have a maximum number of steps equal to 3, the NEXT signal resets the Step Counter in step T4.
 
-The complete schematic of the ISAP-1 computer that correctly executes the NOP instruction and the LIL instruction is shown in the following figure:
 
-![ Figure 14 ](/Pictures/Figure14.png)
 
-The system has been tested and is working properly.
 
-The simulation of this version of the ISAP-1 computer in the Logisim program is in the file: 
-[ ISAP-1_v2.circ ](/Logisim/ISAP-1_v2.circ)
 
-The ROM contents in my simulation is: [ ROM2](/Logisim/ROM2)
 
-## LIH instruction implementation
-LIH – Load an immediate value into the upper nibble of the Accumulator
 
-The full description of the implementation of the LIH instruction is here: \
-https://github.com/LincaMarius/ISAP-1_Computer_Instruction_Set#lih-instruction--load-immediate-value-into-upper-nible-of-accumulator
 
-## Update Control Unit for LIH instruction implementation
-The Control Unit to control the ISAP-1 computer to execute the new LIH instruction does not need additional input, output and control signals.
 
-The Boolean equations for the signals that are active when the LIH instruction is executed are:
--	EI = LIH * T3
--	LAH = LIH * T3
-
-If we take into account the existing signals for the already implemented instructions and add the new signals we get the following equations for the control signals:
--	EI = LIL * T3 + LIH * T3
--	LAL = LIL * T3
--	LAH = LIH * T3
-
-We will consider all unimplemented instructions as NOP.
-
-The implementation of the Control Unit block in Logisim for executing the new LIH instruction is shown in the following figure:
-
-![ Figure 15 ](/Pictures/Figure15.png)
-
-The complete schematic of the ISAP-1 computer correctly executing the new LIH instruction is shown in the following figure:
-
-![ Figure 16 ](/Pictures/Figure16.png)
-
-The system has been tested and is working properly.
-
-The simulation of this version of the ISAP-1 computer in the Logisim program is in the file: 
-[ ISAP-1_v3.circ ](/Logisim/ISAP-1_v3.circ)
-
-The ROM contents in my simulation is: [ ROM3](/Logisim/ROM3)
-
-## STA instruction implementation
-STA – Store data from Accumulator in RAM memory at address n \
-The full description of the implementation of the STA instruction is here: \
-https://github.com/LincaMarius/ISAP-1_Computer_Instruction_Set#sta-instruction--store-accumulator
-
-To implement the STA instruction at the simulation level, we must first implement the RAM according to the diagram in [ Figure 2 ](/Pictures/Figure2.png).
 
 ## Implementation of the RAM Memory module
 The RAM Memory module has the following inputs, outputs and control signals:
@@ -422,32 +380,5 @@ The full description of the implementation of the ADD instruction is here: \
 https://github.com/LincaMarius/ISAP-1_Computer_Instruction_Set#add-instruction--add-to-accumulator
 
 To implement the ADD instruction at the simulation level we must first implement the B Register (Temporary Register) and the Arithmetic and Logic Unit (ALU).
-
-## Register B implementation
-Register B has the following input, output and control signals:
-- LB - loading data from the bus into Register B
-- CLK – clock signal that ensures synchronism in the operation of the computer
-- DIN - Data Input – connects to the bus
-- DOUT - Data Output – connects to the bus
-- ALUB – the contents of Register B connect to the Logical and Arithmetic Unit
-
-The implementation of the Register B block in Logisim is shown in the following figure:
-
-![ Figure 24 ](/Pictures/Figure24.png)
-
-## Arithmetic and Logic Unit Implementation
-The Arithmetic and Logic Unit has the following input, output and control signals:
-- ALUA – the contents of the Accumulator Register are connected to the Logical and Arithmetic Unit as operand A
-- ALUB – the contents of Register B are connected to the Logical and Arithmetic Unit as operand B
-- SU - Subtraction – control signal that orders the subtraction operation to be performed instead of addition
-- EU - control signal that commands the activation of the outputs to put on the bus the result of the arithmetic operation performed
-- FS - control signal that commands the selection of the Flag that is checked when a jump instruction is executed.
-- DOUT - Data Output – connects to the bus
-- F – output signal showing the state of the selected Flag
-
-The implementation of the Arithmetic and Logical Unit in Logisim is shown in the following figure:
-
-![ Figure 25 ](/Pictures/Figure25.png)
-
 
 
