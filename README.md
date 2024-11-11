@@ -59,7 +59,7 @@ In total, 13 out of 15 possible instructions are implemented.
 ## The Extended Instruction Set of the ISAP-1 computer is:
 
 | Mnemonic | Opcode    | Hex | Steps | Operation                                 |
-|----------|-----------|-----|---------------------------------------------------|
+|----------|-----------|-----|-------|-------------------------------------------|
 | NOP      | 1111 0000 | F0h |   2   | No Operation                              |
 | INC      | 1111 0001 | F1h |   4   | Increment the contents of the Accumulator |
 | DEC      | 1111 0010 | F2h |   4   | Decrement the contents of the Accumulator |
