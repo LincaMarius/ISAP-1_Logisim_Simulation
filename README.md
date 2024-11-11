@@ -103,6 +103,10 @@ The implementation of the Address Register block in Logisim is shown in the foll
 
 ![ Figure 4 ](/Pictures/Figure4.png)
 
+The Address Register is implemented with a 4-bit register and stores the 4 least significant bits of data received from the Bus when the LAR control signal is active and the rising edge of the clock signal occurs.
+
+The output of this register is connected to 4 bits of the Address Bus through a 4-bit Buffer. The output is permanently active. The buffer is needed to provide the Fan-out for the control of the address bus, because they can connect to it: RAM Memory, ROM Memory, 16 I/O devices.
+
 Pin R is to display when this block is reading from the bus.
 
 ### Instruction Register implementation
