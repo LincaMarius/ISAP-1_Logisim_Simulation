@@ -92,7 +92,7 @@ The PROBE pins are used to view the contents of the Program Counter regardless o
 
 Pins W and R, are to indicate when this block is writing or reading from the bus.
 
-### Address Register implementation
+## Address Register implementation
 The Address Register has the following input, output and control signals:
 - LAR - load data from the bus in the Address Register
 - CLK – clock signal that ensures synchronism in the operation of the computer
