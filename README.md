@@ -169,6 +169,13 @@ The implementation of the Register B block in Logisim is shown in the following 
 
 ![ Figure 7 ](/Pictures/Figure7.png)
 
+Register B is implemented with an 8-bit register and stores 8 bits of data received from the Bus when the control signal LB is active and the rising edge of the clock signal occurs.
+
+The output is connected to the Logic and Arithmetic Unit permanently.
+
+Pin R is to display when this block is reading from the bus.
+
+
 ## Arithmetic and Logic Unit Implementation
 The Arithmetic and Logic Unit has the following input, output and control signals:
 - ALUA – the contents of the Accumulator Register are connected to the Logical and Arithmetic Unit as operand A
