@@ -70,26 +70,15 @@ In total, 13 out of 15 possible instructions are implemented.
 In total, 6 extended instructions out of 16 possible are implemented.
 
 
-## Implementation of NOP instruction
-The full description of the implementation of the NOP instruction is here: \
-https://github.com/LincaMarius/ISAP-1_Computer_Instruction_Set#nop-instruction--no-operation
-
-As can be seen from the diagram in [figure 2](/Pictures/Figure2.png) and from the Boolean equations presented in the link above, to implement the NOP instruction we need the following functional blocks:
--	Program Counter
--	Address Register
--	Program Memory as ROM Memory
--	Instruction Register
--	Control Unit
-
-### Program Counter implementation
+## Program Counter implementation
 Program Counter has the following input, output and control signals:
 - CP – Program Counter content increment
-- LP - loading data from the bus into the Program Counter
+- LP - loading data from the Bus into the Program Counter
 - CLK – clock signal that ensures synchronism in the operation of the computer
 - CLR – reset signal that initializes the Program Counter to zero
-- EP – output activation for putting data from the Program Counter on the bus
-- DIN - Data Input – connects to the bus
-- DOUT - Data Output – connects to the bus
+- EP – output activation for putting data from the Program Counter on the Bus
+- Data Input – connects to the bus
+- Data Output – connects to the bus
 
 The implementation of the Program Counter block in Logisim is shown in the following figure:
 
