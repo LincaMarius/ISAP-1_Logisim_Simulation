@@ -200,21 +200,22 @@ The state of the Flags is stored in a 3-bit register and passed to the Control B
 The W pin has the role of displaying when this block is writing to the bus.
 
 
+## Implementation of the Constants Generator block
+The Constants Generator module has the following inputs, outputs and control signals:
+- SC1 – Constant Setting 1 – constant setting generated 1
+- EC – Enable Constant Output – data output to the Bus is activated
+- DOUT - Data Output – connects to the bus
 
-
-
-
-
-
-
+The implementation of the Constants Generator in Logisim is presented in the following figure:
 
 
 
 
 ## Implementation of the RAM Memory module
 The RAM Memory module has the following inputs, outputs and control signals:
-- CE – Chip Enable activates the memory chip
-- W – Write causes data to be written to memory
+- #CE – Chip Enable - activates the memory chip
+- #W – Write - determines the writing of data in memory
+- #OE – Output Enable – data output to the Bus is activated
 - Data – connects to the bus
 - Address – connects to the address bus
 
