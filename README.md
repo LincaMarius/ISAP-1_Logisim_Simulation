@@ -208,7 +208,7 @@ The Constants Generator module has the following inputs, outputs and control sig
 
 The implementation of the Constants Generator in Logisim is presented in the following figure:
 
-
+![ Figure 9 ](/Pictures/Figure9.png)
 
 
 ## Implementation of the RAM Memory module
