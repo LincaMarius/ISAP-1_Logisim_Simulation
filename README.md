@@ -238,7 +238,7 @@ Since the RAM memory model present in the Logisim program has a different operat
 
 This module is shown in the following figure:
 
-![ Figure 17 ](/Pictures/Figure17.png)
+![ Figure 11 ](/Pictures/Figure11.png)
 
 Thus we determined the following behavior:
 
@@ -257,6 +257,8 @@ But I want to use signals used by a real memory chip #CS, #OE and #WE:
 | Disabled |  1  |  0  |  1  |
 | Disabled |  1  |  1  |  1  |
 
+These signals, in the case of a memory chip are active low.
+
 The ISAP-1 computer uses two active high signals DM and W to control the RAM memory:
 
 |          | DM  |  W  | 
@@ -267,13 +269,14 @@ The ISAP-1 computer uses two active high signals DM and W to control the RAM mem
 | Disabled |  0  |  1  |
 
 From the first and third tables the following state table results:
+
 |          |        | SEL | LD  |
 |----------|--------|-----|-----|
 | Write    | DM + W |  1  |  0  |
 | Read	   | DM     |  1  |  1  |
 | Disabled |    -   |  0  |  0  |
 
-LD setat înaintea lui SEL
+LD must be set before SEL.
 
 The following equations result:
 -	SEL = DM
@@ -281,7 +284,10 @@ The following equations result:
 
 These equations are implemented with the following circuit:
 
-![ Figure 18 ](/Pictures/Figure18.png)
+![ Figure 12 ](/Pictures/Figure12.png)
+
+Between the control pin DM and the control input sel we inserted two inverters with the role of delay line. Because of this delay the circuit does not behave correctly.
+
 
 ## Update Control Unit for STA instruction implementation
 The Control Unit to control the ISAP-1 computer for the execution of the new STA instruction needs to control in addition the following control signals:
