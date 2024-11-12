@@ -210,6 +210,9 @@ The implementation of the Constants Generator in Logisim is presented in the fol
 
 ![ Figure 9 ](/Pictures/Figure9.png)
 
+The Constant Generator is implemented with an 8-bit three-state Buffer. Bit 0 is dependent on the control signal SC1 (Set Constant 1).
+
+The output is connected to the bus only when the control signal EC is high.
 
 ## Implementation of the RAM Memory module
 The RAM Memory module has the following inputs, outputs and control signals:
