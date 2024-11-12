@@ -221,6 +221,9 @@ A real ROM has two control pins #CE (Chip Enable) and #OE (Output Enable).
 
 The model implemented by the Logisim program is missing a pin marked sel. This pin is active high and combines the function of the #CE and #OE pins into one pin.
 
+I used the PM control pin connected directly to the sel pin. Operation is verified using the following test scheme:
+
+![ Figure 10 ](/Pictures/Figure10.png)
 
 
 ## Implementation of the RAM Memory module
