@@ -214,6 +214,15 @@ The Constant Generator is implemented with an 8-bit three-state Buffer. Bit 0 is
 
 The output is connected to the bus only when the control signal EC is high.
 
+## Implementation of the ROM Memory module
+As can be seen from figure 1, the ISAP-1 computer has a ROM memory with a capacity of 16 x 8 bits.
+
+A real ROM has two control pins #CE (Chip Enable) and #OE (Output Enable).
+
+The model implemented by the Logisim program is missing a pin marked sel. This pin is active high and combines the function of the #CE and #OE pins into one pin.
+
+
+
 ## Implementation of the RAM Memory module
 The RAM Memory module has the following inputs, outputs and control signals:
 - #CE – Chip Enable - activates the memory chip
