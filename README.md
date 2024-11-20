@@ -114,7 +114,7 @@ The output of this register is connected to 4 bits of the Address Bus. The outpu
 
 Pin R is to display when this block is reading from the Bus.
 
-## Instruction Register implementation
+### Instruction Register implementation
 The Instruction Register has the following input, output and control signals:
 - LI - loading data from the bus into the Instruction Register
 - CLK – clock signal that ensures synchronism in the operation of the computer
@@ -126,7 +126,7 @@ The Instruction Register has the following input, output and control signals:
 
 The implementation of the Instruction Register block in Logisim is shown in the following figure:
 
-![ Figure 5 ](/Pictures/Figure5.png)
+![ Figure 7 ](/Pictures/Figure7.png)
 
 The Instruction Register is implemented with an 8-bit register and stores 8 bits of data received from the Bus when the control signal LI is active and the rising edge of the clock signal occurs.
 
