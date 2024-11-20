@@ -53,18 +53,11 @@ We can notice that the instructions 0011, 0100, 0101, 0110, 0111, 1000, 1001, 10
 
 In total, 5 out of 16 possible instructions are implemented.
 
-## The Extended Instruction Set of the ISAP-1 computer is:
+In order to simulate the SAP-1 computer using the Logisim program, we must design each individual module that makes up the computer.
 
-| Mnemonic | Opcode    | Hex | Steps | Operation                                 |
-|----------|-----------|-----|-------|-------------------------------------------|
-| NOP      | 1111 0000 | F0h |   2   | No Operation                              |
-| INC      | 1111 0001 | F1h |   4   | Increment the contents of the Accumulator |
-| DEC      | 1111 0010 | F2h |   4   | Decrement the contents of the Accumulator |
-| NEG      | 1111 0011 | F3h |   5   | Negate Accumulator                        |
-| CPY      | 1111 1110 | FEh |   3   | Copy Accumulator data into B register     |
-| HLT      | 1111 1111 | FFh |   2   | Stop processing                           |
+For this purpose we must use the detailed block diagram of the SAP-1 computer which is presented in the following figure.
 
-In total, 6 extended instructions out of 16 possible are implemented.
+![ Figure 3 ](/Pictures/Figure3.png)
 
 
 ## Program Counter implementation
