@@ -66,9 +66,9 @@ The Clock and Reset block has the following input, output, and control signals:
 - CLK – clock signal that ensures synchronism in the operation of the computer
 - CLR – reset signal that initializes the Program Counter to zero
 
-We have three control buttons:
-S5 – Reset button
-S6 – Single step button
+We have three control buttons: \
+S5 – Reset button \
+S6 – Single step button \
 S7 – Manual / Auto mode select
 
 This information can be seen in figure 3.
@@ -80,24 +80,22 @@ The implementation of the Clock and Reset block in the Logisim program is shown 
 ## Program Counter implementation
 Program Counter has the following input, output and control signals:
 - CP – Program Counter content increment
-- LP - loading data from the Bus into the Program Counter
 - CLK – clock signal that ensures synchronism in the operation of the computer
 - CLR – reset signal that initializes the Program Counter to zero
 - EP – output activation for putting data from the Program Counter on the Bus
-- Data Input – connects to the bus
 - Data Output – connects to the bus
 
 The implementation of the Program Counter block in Logisim is shown in the following figure:
 
-![ Figure 3 ](/Pictures/Figure3.png)
+![ Figure 5 ](/Pictures/Figure5.png)
 
-The Program Counter is implemented with a 4-bit register and stores the 4 least significant bits of data received from the Bus when the LP control signal is active and the rising edge of the clock signal occurs.
+The Program Counter is made with 4 JK flip-flops and increments the stored numerical value if the CP control signal is active and the positive edge of the clock signal occurs.
 
-The output of this register is connected to the 4 least significant bits of the Bus through an 8-bit 3-state Buffer. The other 4, most significant bits are permanently connected low. The output is active only when the EP control signal is high.
+The output of this register is connected to the 4 least significant bits of the Bus through a 4-bit 3-state Buffer. The other 4 most significant bits are not connected and because we are using TTL logic circuits will appear to be high. The output is active only when the EP control signal is high.
 
 The PROBE pins are used to view the contents of the Program Counter regardless of whether the output is in tri-state mode.
 
-Pins W and R, are to indicate when this block is writing or reading from the bus.
+The W pin is used to display when this block is writing to the Bus.
 
 ## Address Register implementation
 The Address Register has the following input, output and control signals:
