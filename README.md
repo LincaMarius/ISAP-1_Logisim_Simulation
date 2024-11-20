@@ -13,17 +13,16 @@ https://github.com/LincaMarius
 
 The goal of this project is to create a more efficient version of the SAP (Simple As Possible) computer, but with minimal changes so that the instruction format remains the same.
 
-This project is a continuation of other projects made by me:
-https://github.com/LincaMarius/ISAP-Computer \
-https://github.com/LincaMarius/ISAP-1_Computer_Instruction_Set
+This project is part of a project made by me:
+https://github.com/LincaMarius/ISAP-Computer
 
-where we optimized the SAP-1 calculator at the block diagram level and at the Instruction Set level.
+where we optimized the SAP-1 computer
 
-The final structure of the ISAP-1 computer is:
+The Structure of the SAP-1 computer is:
 
 ![ Figure 1 ](/Pictures/Figure1.png)
 
-The block diagram of the Central Processing Unit of the ISAP-1 computer is:
+The block diagram of the Central Processing Unit of the SAP-1 computer is:
 
 ![ Figure 2 ](/Pictures/Figure2.png)
 
