@@ -159,18 +159,17 @@ The PROBE pin is used to view the contents of the block regardless of whether th
 
 Pins W and R, are to indicate when this block is writing or reading from the Bus.
 
-
-## Register B implementation
+### Register B implementation
 Register B has the following input, output and control signals:
-- LB - loading data from the bus into Register B
+- LB - loading data from the Bus into Register B
 - CLK – clock signal that ensures synchronism in the operation of the computer
-- DIN - Data Input – connects to the bus
-- DOUT - Data Output – connects to the bus
+- DIN - Data Input – connects to the Bus
+- DOUT - Data Output – connects to the Bus
 - ALUB – the contents of Register B connect to the Logical and Arithmetic Unit
 
 The implementation of the Register B block in Logisim is shown in the following figure:
 
-![ Figure 7 ](/Pictures/Figure7.png)
+![ Figure 9 ](/Pictures/Figure9.png)
 
 Register B is implemented with an 8-bit register and stores 8 bits of data received from the Bus when the control signal LB is active and the rising edge of the clock signal occurs.
 
