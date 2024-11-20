@@ -77,7 +77,7 @@ The implementation of the Clock and Reset block in the Logisim program is shown 
 
 ![ Figure 4 ](/Pictures/Figure4.png)
 
-## Program Counter implementation
+### Program Counter implementation
 Program Counter has the following input, output and control signals:
 - CP – Program Counter content increment
 - CLK – clock signal that ensures synchronism in the operation of the computer
@@ -97,22 +97,22 @@ The PROBE pins are used to view the contents of the Program Counter regardless o
 
 The W pin is used to display when this block is writing to the Bus.
 
-## Address Register implementation
+### Address Register implementation
 The Address Register has the following input, output and control signals:
-- LAR - load data from the bus in the Address Register
+- LAR - load data from the Bus in the Address Register
 - CLK – clock signal that ensures synchronism in the operation of the computer
-- DIN - Data Input – connects to the bus
-- ABUS – control output for the address bus
+- DIN - Data Input – connects to the Bus
+- ABUS – control output for the Address Bus
 
 The implementation of the Address Register block in Logisim is shown in the following figure:
 
-![ Figure 4 ](/Pictures/Figure4.png)
+![ Figure 6 ](/Pictures/Figure6.png)
 
 The Address Register is implemented with a 4-bit register and stores the 4 least significant bits of data received from the Bus when the LAR control signal is active and the rising edge of the clock signal occurs.
 
-The output of this register is connected to 4 bits of the Address Bus through a 4-bit Buffer. The output is permanently active. The buffer is needed to provide the Fan-out for the control of the address bus, because they can connect to it: RAM Memory, ROM Memory, 16 I/O devices.
+The output of this register is connected to 4 bits of the Address Bus. The output is permanently active.
 
-Pin R is to display when this block is reading from the bus.
+Pin R is to display when this block is reading from the Bus.
 
 ## Instruction Register implementation
 The Instruction Register has the following input, output and control signals:
