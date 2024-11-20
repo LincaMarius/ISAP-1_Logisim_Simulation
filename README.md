@@ -18,6 +18,8 @@ https://github.com/LincaMarius/ISAP-Computer
 
 where we optimized the SAP-1 computer
 
+## ISAP-1 version 1
+
 The Structure of the SAP-1 computer is:
 
 ![ Figure 1 ](/Pictures/Figure1.png)
@@ -26,34 +28,30 @@ The block diagram of the Central Processing Unit of the SAP-1 computer is:
 
 ![ Figure 2 ](/Pictures/Figure2.png)
 
-
-## The format of the ISAP-1 computer instructions is:
+### The format of the SAP-1 computer instructions is:
 
 | 4 bits instruction code   | 4 bits operand (memory address)          |
 |---------------------------|------------------------------------------|
 
+We notice that the upper nibble is used to encode an instruction.
 
-## The Main Instruction Set of the ISAP-1 computer is:
+So, any instruction is encoded on 4 bits.
 
-| Mnemonic | Opcode | Hex | Steps | Description                                                   |
-|----------|--------|-----|-------|---------------------------------------------------------------|
-| LDA      | 0000   | 0h  |   4   | Load RAM data into Accumulator                                |
-| ADD      | 0001   | 1h  |   5   | Add RAM data to Accumulator                                   |
-| SUB      | 0010   | 2h  |   5   | Substract RAM data from accumulator                           |
-| LIL      | 0011   | 3h  |   3   | Load immediate value into the lower nibble of the Accumulator |
-| LIH      | 0100   | 4h  |   3   | Load immediate value into the upper nibble of the Accumulator |
-| STA      | 0101   | 5h  |   4   | Store Accumulator data into RAM                               |
-| CMP      | 0110   | 6h  |   5   | Compare RAM data with Accumulator                             |
-| JZ       | 1001   | 9h  |   3   | Jump if Zero flag is set                                      |
-| JC       | 1010   | Ah  |   3   | Jump if Carry flag is set                                     |
-| JS       | 1011   | Bh  |   3   | Jump if Sign flag is set                                      |
-| JMP      | 1100   | Ch  |   3   | Unconditional jump to address n                               |
-| IN       | 1101   | Dh  |   4   | Input data from Port p into the Accumulator                   |
-| OUT      | 1110   | Eh  |   4   | Load Accumulator data into Output Register                    |
-| -        | 1111   | Fh  |   -   | Prefix for extended instruction set                           |
+Thus, we can have a maximum of 2 ^ 4 = 16 instructions.
 
-In total, 13 out of 15 possible instructions are implemented.
+### The original instruction set of the SAP-1 computer is:
 
+| Mnemonic | Opcode | Operation                                  |
+|----------|--------|--------------------------------------------|
+| LDA      | 0000   | Load RAM data into Accumulator             |
+| ADD      | 0001   | Add RAM data to Accumulator                |
+| SUB      | 0010   | Substract RAM data from accumulator        |
+| OUT      | 1110   | Load Accumulator data into Output Register |
+| HLT      | 1111   | Stop processing                            |
+
+We can notice that the instructions 0011, 0100, 0101, 0110, 0111, 1000, 1001, 1010, 1011, 1100, 1101 are not used. So we can add 11 more new instructions.
+
+In total, 5 out of 16 possible instructions are implemented.
 
 ## The Extended Instruction Set of the ISAP-1 computer is:
 
