@@ -197,94 +197,36 @@ The output to the Bus is provided by a three-state buffer and is active only whe
 
 The W pin has the role of displaying when the Result is writing to the Bus.
 
-## Implementation of the Constants Generator block
-The Constants Generator module has the following inputs, outputs and control signals:
-- SC1 – Constant Setting 1 – constant setting generated 1
-- EC – Enable Constant Output – data output to the Bus is activated
-- DOUT - Data Output – connects to the bus
-
-The implementation of the Constants Generator in Logisim is presented in the following figure:
-
-![ Figure 9 ](/Pictures/Figure9.png)
-
-The Constant Generator is implemented with an 8-bit three-state Buffer. Bit 0 is dependent on the control signal SC1 (Set Constant 1).
-
-The output is connected to the bus only when the control signal EC is high.
-
-## Implementation of the ROM Memory module
-As can be seen from figure 1, the ISAP-1 computer has a ROM memory with a capacity of 16 x 8 bits.
-
-A real ROM has two control pins #CE (Chip Enable) and #OE (Output Enable).
-
-The model implemented by the Logisim program is missing a pin marked sel. This pin is active high and combines the function of the #CE and #OE pins into one pin.
-
-I used the PM control pin connected directly to the sel pin. Operation is verified using the following test scheme:
-
-![ Figure 10 ](/Pictures/Figure10.png)
-
-
-## Implementation of the RAM Memory module
-The RAM Memory module has the following inputs, outputs and control signals:
-- #CE – Chip Enable - activates the memory chip
-- #W – Write - determines the writing of data in memory
-- #OE – Output Enable – data output to the Bus is activated
-- Data – connects to the bus
-- Address – connects to the address bus
-
-Since the RAM memory model present in the Logisim program has a different operating mode than a real memory chip we implemented a module called “RAMtest” to determine this behavior.
-
-This module is shown in the following figure:
+### Implementation of the RAM Memory module
+Figure 11 shows the Memory block of the SAP-1 computer.
 
 ![ Figure 11 ](/Pictures/Figure11.png)
 
-Thus we determined the following behavior:
+The memory has two operating modes, dictated by the position of switch S2.
 
-|          | SEL |  LD | Description       |
-|----------|-----|-----|-------------------|
-| Write	   |  1  |  0  |                   |
-| Read	   |  1  |  1  | LD set before SEL |
-| Disabled |  0  |  0  |                   |
+When S2 is in the Run position, the PGM signal is low and causes the Address Multiplexer to select the address from the input connected to the Memory Address Register. Also, the CE control signal is connected to the #CE control pin of the RAM.
 
-But I want to use signals used by a real memory chip #CS, #OE and #WE:
-
-|          | #WE | #CS | #OE |
-|----------|-----|-----|-----|
-| Write    |  0  |  0  |  1  |
-| Read	   |  1  |  0  |  0  |
-| Disabled |  1  |  0  |  1  |
-| Disabled |  1  |  1  |  1  |
-
-These signals, in the case of a memory chip are active low.
-
-The ISAP-1 computer uses two active high signals DM and W to control the RAM memory:
-
-|          | DM  |  W  | 
-|----------|-----|-----|
-| Write    |  1  |  1  | 
-| Read	   |  1  |  0  | 
-| Disabled |  0  |  0  | 
-| Disabled |  0  |  1  |
-
-From the first and third tables the following state table results:
-
-|          |        | SEL | LD  |
-|----------|--------|-----|-----|
-| Write    | DM + W |  1  |  0  |
-| Read	   | DM     |  1  |  1  |
-| Disabled |    -   |  0  |  0  |
-
-LD must be set before SEL.
-
-The following equations result:
--	SEL = DM
--	LD = DM * #W
-
-These equations are implemented with the following circuit:
+The Schematic Diagram of the Memory Block in Run Mode is as follows
 
 ![ Figure 12 ](/Pictures/Figure12.png)
 
-Between the control pin DM and the control input sel we inserted two inverters with the role of delay line. Because of this delay the circuit does not behave correctly.
-
-The scheme of the ISAP-1 computer is shown in the following figure.
+In this Diagram the Multiplexer can be ignored and we can obtain a simpler and easier to understand Diagram.
 
 ![ Figure 13 ](/Pictures/Figure13.png)
+
+Thus, the memory of the SAP-1 computer in Run mode is used as a ROM memory. Control input #CE if high disables the output which is three-state, and if low at the output the data from the selected address is presented.
+
+The RAM Memory module has the following inputs, outputs and control signals:
+- #CE – Chip Enable - activates the memory chip
+- Data – connects to the bus
+- Address – connects to the address bus
+
+It is noted that the RAM used does not have a #OE control pin for output inhibition, this function is taken over by the #CE pin.
+
+I came to the conclusion that I can use a ROM memory model provided by the Logisim program.
+
+The ROM memory model implemented in the Logisim program has the sel input which, if high, presents the data at the selected address at the output. When the sel pin is low, the output goes into high impedance mode.
+
+This behavior allows the DM control signal to be directly connected to the sel pin of the ROM memory in the Logisim program.
+
+![ Figure 14 ](/Pictures/Figure14.png)
