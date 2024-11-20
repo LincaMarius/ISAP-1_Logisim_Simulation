@@ -177,19 +177,17 @@ The output is connected to the Logic and Arithmetic Unit permanently.
 
 Pin R is to display when this block is reading from the bus.
 
-
-## Arithmetic and Logic Unit Implementation
+### Arithmetic and Logic Unit Implementation
 The Arithmetic and Logic Unit has the following input, output and control signals:
-- ALUA – the contents of the Accumulator Register are connected to the Logical and Arithmetic Unit as operand A
+- ALUA – the contents of the Accumulator Register are connected to the Arithmetic and Logic Unit as operand A
 - ALUB – the contents of Register B are connected to the Logical and Arithmetic Unit as operand B
-- SU - Subtract – control signal that orders the subtraction operation to be performed if it is high
-- EU - control signal that commands the activation of the outputs to put on the bus the result of the arithmetic operation performed
+- SU - Subtraction – control signal that activates subtraction operation to be performed if it is high
+- EU - control signal that commands the activation of the outputs to put on the Bus the Result of the arithmetic operation performed
 - DOUT - Data Output – connects to the bus
-- FLAGS – output signal showing the state of the Flags
 
 The implementation of the Arithmetic and Logical Unit in Logisim is shown in the following figure:
 
-![ Figure 8 ](/Pictures/Figure8.png)
+![ Figure 10 ](/Pictures/Figure10.png)
 
 The Arithmetic and Logic Unit has as its main element an 8-bit Adder. The addition calculation is performed continuously.
 
@@ -197,10 +195,7 @@ The Subtraction operation is done by inverting the value of operand B (one's com
 
 The output to the Bus is provided by a three-state buffer and is active only when the EU control signal is high.
 
-The state of the Flags is stored in a 3-bit register and passed to the Control Block to help execute conditional jump instructions.
-
-The W pin has the role of displaying when this block is writing to the bus.
-
+The W pin has the role of displaying when the Result is writing to the Bus.
 
 ## Implementation of the Constants Generator block
 The Constants Generator module has the following inputs, outputs and control signals:
