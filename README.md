@@ -130,36 +130,34 @@ The implementation of the Instruction Register block in Logisim is shown in the 
 
 The Instruction Register is implemented with an 8-bit register and stores 8 bits of data received from the Bus when the control signal LI is active and the rising edge of the clock signal occurs.
 
-The lower nibble stored in the Instruction Register is output on the bus for both the lower nibble and the upper nibble, this allows implementation of LIL instructions that load an immediate value into the lower nibble of the Accumulator but also the LIH instruction which loads an immediate value into the upper nibble of the Accumulator. The output is tri-stated by using an 8-bit buffer and is active only when the EI control signal is high.
+The lower nibble stored in the Instruction Register is presented on the bus output if the EI control signal is high and represents the parameter of the instruction being executed. The output is tri-stated using a 4-bit buffer and is active only when the EI control signal is high.
 
 The PROBE pin are used to view the contents of the block regardless of whether the output is in tri-state mode.
 
-Pins W and R, are to indicate when this block is writing or reading from the bus.
+Pins W and R, are to indicate when this block is writing or reading from the Bus.
 
 The INSTR pin presents the current instruction to the Control Block where it is decoded.
 
-
-## Implementation of the Accumulator Register
+### Implementation of the Accumulator Register
 The Accumulator register has the following input, output and control signals:
-- LAH - loading data from the bus into the upper Nibble Accumulator Register
-- LAL - load data from the bus into the lower Nibble Accumulator Register
-- CLK – clock signal that ensures synchronism in the operation of the computer
-- EA – output activation for putting data from the Accumulator Register on the bus
-- Data Input – connects to the bus
-- Data Output – connects to the bus
-- ALUA – the contents of the Accumulator connect to the Logical and Arithmetic Unit
+- LA - load data from the Bus into the Accumulator Register
+- CLK - clock signal that ensures synchronism in the operation of the computer
+- EA - output control for putting data from the Accumulator Register on the Bus
+- Data Input - connects to the Bus
+- Data Output - connects to the Bus
+- ALUA - the contents of the Accumulator are connected to the Arithmetic and Logic Unit
 
 The implementation of the Accumulator Register block in Logisim is shown in the following figure:
 
-![ Figure 6 ](/Pictures/Figure6.png)
+![ Figure 8 ](/Pictures/Figure8.png)
 
-The Accumulator register is implemented with two 4-bit registers that independently store the lower nibble when the control signal LAL is high and the rising edge of the clock signal occurs, or the upper nibble when the control signal LAH is high and the rising edge of the clock signal occurs. 
+The Accumulator Register is implemented with an 8-bit register that stores the data present at the input from the Bus when the LA control signal is high and the rising edge of the clock signal occurs.
 
 The output is provided by a three-state buffer and is active only when the EA control signal is high.
 
 The PROBE pin is used to view the contents of the block regardless of whether the output is in tri-state mode.
 
-Pins W and R, are to indicate when this block is writing or reading from the bus.
+Pins W and R, are to indicate when this block is writing or reading from the Bus.
 
 
 ## Register B implementation
