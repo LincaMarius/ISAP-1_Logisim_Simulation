@@ -59,6 +59,23 @@ For this purpose we must use the detailed block diagram of the SAP-1 computer wh
 
 ![ Figure 3 ](/Pictures/Figure3.png)
 
+The first block to be implemented is Clock and Reset
+
+### Clock and Reset Implementation
+The Clock and Reset block has the following input, output, and control signals:
+- CLK – clock signal that ensures synchronism in the operation of the computer
+- CLR – reset signal that initializes the Program Counter to zero
+
+We have three control buttons:
+S5 – Reset button
+S6 – Single step button
+S7 – Manual / Auto mode select
+
+This information can be seen in figure 3.
+
+The implementation of the Clock and Reset block in the Logisim program is shown in the following figure
+
+![ Figure 4 ](/Pictures/Figure4.png)
 
 ## Program Counter implementation
 Program Counter has the following input, output and control signals:
