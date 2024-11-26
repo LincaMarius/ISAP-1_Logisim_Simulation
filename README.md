@@ -198,7 +198,7 @@ The output to the Bus is provided by a three-state buffer and is active only whe
 The W pin has the role of displaying when the Result is writing to the Bus.
 
 ### Implementation of the RAM Memory module
-Figure 11 shows the Memory block of the SAP-1 computer.
+Figure 11 shows the Memory Block of the SAP-1 Computer seen from a functional point of view by the Computer when running a program.
 
 ![ Figure 11 ](/Pictures/Figure11.png)
 
