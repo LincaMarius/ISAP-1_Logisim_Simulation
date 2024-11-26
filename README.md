@@ -242,4 +242,25 @@ An image of the computer implemented in the Logisim program after it has finishe
 
 ![ Figure 14 ](/Pictures/Figure14.png)
 
+This program is:
+
+| Address | Instruction | Hexa |Assembly |    Action    |      Rezult     |
+|---------|-------------|------|---------|--------------|-----------------|
+|  0000	  |  0000 0010  |  04  |  LDA 4  | A <- [4]	    | A = 44          |
+|  0001   |	 0001 0001  |  11  |  ADD 1  | A <- A + [1]	| A = 44 + 1 = 45 |
+|  0002   |	 0010 0000  |  20  |  SUB 0  | A <- A – [0]	| A = 45 – 4 = 41 |
+|  0003   |	 0011 0000  |  30  |  NOP	 |	    -		|       -	      |
+|  0004   |	 0100 0100  |  44  |  NOP	 |	    -		|       -	      |
+|  0005   |	 0101 0000  |  50  |  NOP	 |	    -		|       -	      |
+|  0006   |	 0110 0000  |  60  |  NOP	 |	    -		|       -	      |
+|  0007   |	 0111 0000  |  70  |  NOP	 |	    -		|       -	      |
+|  0008   |	 1000 0000  |  80  |  NOP	 |	    -		|       -	      |
+|  0009   |	 1001 0000  |  90  |  NOP	 |	    -		|       -	      |
+|  000A   |	 1010 0000  |  A0  |  NOP	 |	    -		|       -	      |
+|  000B   |	 1011 0000  |  B0  |  NOP	 |	    -		|       -	      |
+|  000C   |	 1100 0000  |  C0  |  NOP	 |	    -		|       -	      |
+|  000D   |	 1101 0000  |  D0  |  NOP	 |	    -		|       -	      |
+|  000E   |	 1110 0000  |  E0  |  OUT	 | OUT <- A		| OUT = 41	      |
+|  000F   |	 1111 0000  |  F0  |  HLT	 | HLT		    | HLT	          |
+
 
