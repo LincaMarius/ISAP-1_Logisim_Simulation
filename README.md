@@ -228,3 +228,18 @@ The Output module has the following input, output and control signals:
 The implementation of the Output Module in Logisim is shown in the following figure:
 
 ![ Figure 13 ](/Pictures/Figure13.png)
+
+### Control Block Implementation
+The Control Block is very important for the operation of any system and must be implemented with great care because the system's performance depends on it.
+
+The design and implementation of the Control Block is presented in this repository: \
+https://github.com/LincaMarius/ISAP-1_Control_Unit
+
+### Implementation of the ISAP-1 Computer version 1 in Logisim
+The functional implementation of the ISAP-1 Computer version 1 in the Logisim program is presented in the file [ ISAP-1_v1.circ ](/Logisim/ISAP-1_v1.circ).
+
+An image of the computer implemented in the Logisim program after it has finished running the PRPGRAM_1 test program present in the ROM memory is:
+
+![ Figure 14 ](/Pictures/Figure14.png)
+
+
