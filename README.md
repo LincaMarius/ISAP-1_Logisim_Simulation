@@ -217,4 +217,4 @@ The ROM memory model implemented in the Logisim program has the sel input which,
 
 This behavior allows the DM control signal to be directly connected to the sel pin of the ROM memory in the Logisim program.
 
-![ Figure 14 ](/Pictures/Figure14.png)
+![ Figure 12 ](/Pictures/Figure12.png)
