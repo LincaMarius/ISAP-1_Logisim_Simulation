@@ -218,3 +218,13 @@ The ROM memory model implemented in the Logisim program has the sel input which,
 This behavior allows the DM control signal to be directly connected to the sel pin of the ROM memory in the Logisim program.
 
 ![ Figure 12 ](/Pictures/Figure12.png)
+
+### Output Module Implementation
+The Output module has the following input, output and control signals:
+- I/O - loading data from the Bus into the Output Module, the original name is LO
+- CLK – clock signal that ensures synchronism in the operation of the computer
+- DIN - Data Input – connects to the bus
+
+The implementation of the Output Module in Logisim is shown in the following figure:
+
+![ Figure 13 ](/Pictures/Figure13.png)
