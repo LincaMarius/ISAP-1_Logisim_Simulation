@@ -236,7 +236,7 @@ The design and implementation of the Control Block is presented in this reposito
 https://github.com/LincaMarius/ISAP-1_Control_Unit
 
 ### Implementation of the ISAP-1 Computer version 1 in Logisim
-The functional implementation of the ISAP-1 Computer version 1 in the Logisim program is presented in the file [ ISAP-1_v1.circ ](/Logisim/ISAP-1_v1.circ).
+The functional implementation of the ISAP-1 Computer version 1 in the Logisim program is presented in the file [ ISAP-1_revA_ver1.circ ](/Logisim/ISAP-1_revA_ver1.circ).
 
 An image of the computer implemented in the Logisim program after it has finished running the PRPGRAM_1 test program present in the ROM memory is:
 
@@ -282,4 +282,4 @@ https://github.com/LincaMarius/ISAP-1_Control_Unit#revision-b-version-1
 The operation of the ISAP-1 computer, which has a Control Unit implemented using ROM memories, was tested by running the following programs: \
 https://github.com/LincaMarius/ISAP-1_Programs
 
-
+The functional implementation of the ISAP-1 Computer revision B version 1 in the Logisim program is presented in the file [ISAP-1_revB_ver1.circ](/Logisim/ISAP-1_revB_ver1.circ).
