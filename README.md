@@ -277,3 +277,9 @@ This implies keeping all functional blocks implemented so far unchanged.
 Only the Control Block needs to be modified from the implementation with logic gates to the implementation using ROM memory for storing microinstructions as presented in the book on page 161 in subchapter 10-8.
 
 The design and implementation of the Control Block using a ROM memory are presented in this repository: \
+https://github.com/LincaMarius/ISAP-1_Control_Unit#revision-b-version-1
+
+The operation of the ISAP-1 computer, which has a Control Unit implemented using ROM memories, was tested by running the following programs: \
+https://github.com/LincaMarius/ISAP-1_Programs
+
+
