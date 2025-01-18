@@ -263,6 +263,9 @@ This program is:
 |  000E   |	 1110 0000  |  E0  |  OUT	 | OUT <- A		| OUT = 51	       |
 |  000F   |	 1111 0000  |  F0  |  HLT	 | HLT		    | HLT	           |
 
+The contents of the ROM memory are: \
+[ ROM1 ](https://github.com/LincaMarius/ISAP-1_Programs/blob/main/ROMS/ROM1)
+
 ## ISAP-1 revision B version 1
 Revision B, I want to be an implementation of the SAP-1 computer that has the Control Unit made using microprogramming and storing microinstructions in ROM memory.
 
