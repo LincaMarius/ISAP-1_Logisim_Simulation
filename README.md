@@ -5,7 +5,7 @@ This is the process of making the ISAP-1 computer at the simulation level using 
 
 By: Lincă Marius Gheorghe.
 
-Pitești, Argeș, România, Europe.
+Pitești, Argeș, Romania, Europe.
 
 https://github.com/LincaMarius
 
@@ -62,7 +62,7 @@ For this purpose we must use the detailed block diagram of the SAP-1 computer wh
 The first block to be implemented is Clock and Reset
 
 ### Clock and Reset Implementation
-The Clock and Reset block has the following input, output, and control signals:
+The Clock and Reset Block has the following output signals:
 - CLK – clock signal that ensures synchronism in the operation of the computer
 - CLR – reset signal that initializes the Program Counter to zero
 
@@ -73,19 +73,19 @@ S7 – Manual / Auto mode select
 
 This information can be seen in figure 3.
 
-The implementation of the Clock and Reset block in the Logisim program is shown in the following figure
+The implementation of the Clock and Reset Block in Logisim software is shown in the following figure
 
 ![ Figure 4 ](/Pictures/Figure4.png)
 
 ### Program Counter implementation
 Program Counter has the following input, output and control signals:
-- CP – Program Counter content increment
-- CLK – clock signal that ensures synchronism in the operation of the computer
-- CLR – reset signal that initializes the Program Counter to zero
-- EP – output activation for putting data from the Program Counter on the Bus
-- Data Output – connects to the Bus
+- CP – Program Counter Counting - increment Program Counter content
+- CLK – Clock - clock signal that ensures synchronism in the operation of the computer
+- CLR – Clear - reset signal that initializes the Program Counter to zero
+- Ep – Program Counter Enable - output activation for putting data from the Program Counter on the bus
+- DOUT – Data Output – connects to the bus
 
-The implementation of the Program Counter block in Logisim is shown in the following figure:
+The implementation of the Program Counter Block in Logisim is shown in the following figure:
 
 ![ Figure 5 ](/Pictures/Figure5.png)
 
@@ -99,12 +99,12 @@ The W pin is used to display when this block is writing to the Bus.
 
 ### Address Register implementation
 The Address Register has the following input, output and control signals:
-- LAR - load data from the Bus in the Address Register
-- CLK – clock signal that ensures synchronism in the operation of the computer
-- DIN - Data Input – connects to the Bus
-- ABUS – control output for the Address Bus
+- LAR – Load Address Register - loads data from the bus into the Address Register
+- CLK – Clock - clock signal that ensures synchronism in the operation of the computer
+- DIN – Data Input - connects to the bus
+- ABUS – Address Bus - control output for the address bus
 
-The implementation of the Address Register block in Logisim is shown in the following figure:
+The implementation of the Address Register Block in Logisim is shown in the following figure:
 
 ![ Figure 6 ](/Pictures/Figure6.png)
 
