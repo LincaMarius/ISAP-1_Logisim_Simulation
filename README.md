@@ -278,4 +278,12 @@ The schematic is shown in Figure 10-7 and consists of 5 inverters and a 12-input
 We can note that the SAP-1 Computer schematic is not modified to implement this functionality, only two logic gates are added.
 
 The design and implementation of the Control Block using the original schematic that implements the Variable Machine Cycle are presented in this repository: \
+https://github.com/LincaMarius/ISAP-1_Control_Unit#isap-1-model-a-version-11
+
+An image of the computer implemented in the Logisim program after it has finished running the PRPOGRAM_1 test program present in the ROM memory is:
+
+![ Figure 15 ](/Pictures/Figure15.png)
+
+The contents of the ROM memory are: \
+[ ROM1 ](https://github.com/LincaMarius/ISAP-1_Programs/blob/main/ROMS/ROM1)
 
