@@ -280,6 +280,9 @@ We can note that the SAP-1 Computer schematic is not modified to implement this 
 The design and implementation of the Control Block using the original schematic that implements the Variable Machine Cycle are presented in this repository: \
 https://github.com/LincaMarius/ISAP-1_Control_Unit#isap-1-model-a-version-11
 
+The functional implementation of the ISAP-1 Computer version 1.1 in the Logisim software is presented in the file: \
+[ ISAP-1_modelA_ver1_1.circ ](/Logisim/ISAP-1_modelA_ver1_1.circ)
+
 An image of the computer implemented in the Logisim program after it has finished running the PRPOGRAM_1 test program present in the ROM memory is:
 
 ![ Figure 15 ](/Pictures/Figure15.png)
