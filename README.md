@@ -18,7 +18,7 @@ https://github.com/LincaMarius/ISAP-Computer
 
 where we optimized the SAP-1 computer
 
-## ISAP-1 revision A version 1
+## ISAP-1 Model A Version 1
 
 The Structure of the SAP-1 computer is:
 
@@ -266,23 +266,16 @@ This program is:
 The contents of the ROM memory are: \
 [ ROM1 ](https://github.com/LincaMarius/ISAP-1_Programs/blob/main/ROMS/ROM1)
 
-## ISAP-1 revision B version 1
-Revision B, I want to be an implementation of the SAP-1 computer that has the Control Unit made using microprogramming and storing microinstructions in ROM memory.
+## ISAP-1 Model A Version 1.1
+In Version 1.1, an improvement is made to the ISAP-1 computer by implementing the Variable Machine Cycle.
 
-I want version 1 to be an implementation of the SAP-1 Computer that is as close to the original as possible. This will be the reference, the starting point for creating a better version.
+The Instruction Set remains unchanged but the Control Block implementation changes.
 
-The Block Diagram remains unchanged for Revision B of the SAP-1 and ISAP-1 computers compared to Revision A.
+In the book on page 163 the authors present a method of improving the SAP-1 Computer by implementing the Variable Machine Cycle.
 
-The Instruction Set remains unchanged for Revision B of the SAP-1 and ISAP-1 computers compared to Revision A.
+The schematic is shown in Figure 10-7 and consists of 5 inverters and a 12-input NAND gate that generates the #NOP signal when the Control Block output has the NOP instruction encoded in Hexadecimal as 3E3h and a two-input AND gate that resets the Ring Counter when the #NOP or #CLR signal is low. 
 
-This implies keeping all functional blocks implemented so far unchanged.
+We can note that the SAP-1 Computer schematic is not modified to implement this functionality, only two logic gates are added.
 
-Only the Control Block needs to be modified from the implementation with logic gates to the implementation using ROM memory for storing microinstructions as presented in the book on page 161 in subchapter 10-8.
+The design and implementation of the Control Block using the original schematic that implements the Variable Machine Cycle are presented in this repository: \
 
-The design and implementation of the Control Block using a ROM memory are presented in this repository: \
-https://github.com/LincaMarius/ISAP-1_Control_Unit#revision-b-version-1
-
-The operation of the ISAP-1 computer, which has a Control Unit implemented using ROM memories, was tested by running the following programs: \
-https://github.com/LincaMarius/ISAP-1_Programs
-
-The functional implementation of the ISAP-1 Computer revision B version 1 in the Logisim program is presented in the file [ISAP-1_revB_ver1.circ](/Logisim/ISAP-1_revB_ver1.circ).
