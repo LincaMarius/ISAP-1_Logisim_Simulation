@@ -273,7 +273,7 @@ The Instruction Set remains unchanged but the Control Block implementation chang
 
 In the book on page 163 the authors present a method of improving the SAP-1 Computer by implementing the Variable Machine Cycle.
 
-The schematic is shown in Figure 10-7 and consists of 5 inverters and a 12-input NAND gate that generates the #NOP signal when the Control Block output has the NOP instruction encoded in Hexadecimal as 3E3h and a two-input AND gate that resets the Ring Counter when the #NOP or #CLR signal is low. 
+The schematic is shown in Figure 10-17 and consists of 5 inverters and a 12-input NAND gate that generates the #NOP signal when the Control Block output has the NOP instruction encoded in Hexadecimal as 3E3h and a two-input AND gate that resets the Ring Counter when the #NOP or #CLR signal is low. 
 
 We can note that the SAP-1 Computer schematic is not modified to implement this functionality, only two logic gates are added.
 
