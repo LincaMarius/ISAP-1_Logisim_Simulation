@@ -290,3 +290,17 @@ An image of the computer implemented in the Logisim program after it has finishe
 The contents of the ROM memory are: \
 [ ROM1 ](https://github.com/LincaMarius/ISAP-1_Programs/blob/main/ROMS/ROM1)
 
+## ISAP-1 Model B version 1.0
+Revision B, I want to be an implementation of the SAP-1 computer that has the Control Unit made using microprogramming and storing microinstructions in ROM memory.
+
+I want version 1 to be an implementation of the SAP-1 Computer that is as close to the original as possible. This will be the reference, the starting point for creating a better version.
+
+The Block Diagram remains unchanged for Model B Version 1.0 of the SAP-1 and ISAP-1 Computers compared to Model A Version 1.0.
+
+The Instruction Set remains unchanged for Model B Version 1.0 of the SAP-1 and ISAP-1 Computers compared to Model A Version 1.0.
+
+This implies keeping all functional blocks implemented so far unchanged.
+
+Only the Control Block needs to be modified from the implementation with logic gates to the implementation using ROM memory for storing microinstructions as presented in the book on page 161 in subchapter 10-8.
+
+The design and implementation of the Control Block using a ROM memory are presented in this repository: \
