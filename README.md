@@ -309,4 +309,22 @@ https://github.com/LincaMarius/ISAP-1_Control_Unit#isap-1-model-b-version-10
 The operation of the ISAP-1 computer, which has a Control Unit implemented using ROM memories, was tested by running the following programs: \
 https://github.com/LincaMarius/ISAP-1_Programs
 
-The functional implementation of the ISAP-1 Computer Model B version 1.0 in the Logisim program is presented in the file: [ISAP-1_modelB_ver1_0.circ](/Logisim/ISAP-1_modelB_ver1_0.circ).
+The functional implementation of the ISAP-1 Computer Model B version 1.0 in the Logisim program is presented in the file: \
+[ISAP-1_modelB_ver1_0.circ](/Logisim/ISAP-1_modelB_ver1_0.circ).
+
+## ISAP-1 Model B Version 1.1
+In Version 1.1, an improvement is made to the ISAP-1 computer by implementing the Variable Machine Cycle.
+
+The Instruction Set remains unchanged but the Control Block implementation changes.
+
+In the book on page 163 the authors present a method of improving the SAP-1 Computer by implementing the Variable Machine Cycle.
+
+The schematic is shown in Figure 10-17 and consists of 5 inverters and a 12-input NAND gate that generates the #NOP signal when the Control Block output has the NOP instruction encoded in Hexadecimal as 3E3h and a two-input AND gate that resets the Ring Counter when the #NOP or #CLR signal is low. 
+
+We can note that the SAP-1 Computer schematic is not modified to implement this functionality, only two logic gates are added.
+
+The design and implementation of the Control Block using the original schematic that implements the Variable Machine Cycle are presented in this repository: \
+https://github.com/LincaMarius/ISAP-1_Control_Unit#isap-1-model-b-version-11
+
+The functional implementation of the ISAP-1 Model B Computer Version 1.1 in Logisim software is presented in the file: \
+[ ISAP-1_modelB_ver1_1.circ ](/Logisim/ISAP-1_modelB_ver1_1.circ)
