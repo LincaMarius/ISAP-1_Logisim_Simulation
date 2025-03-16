@@ -220,6 +220,10 @@ This behavior allows the DM control signal to be directly connected to the sel p
 ![ Figure 12 ](/Pictures/Figure12.png)
 
 ### Output Module Implementation
+Figure 13 shows the Block Diagram of the Output Module of the ISAP-1 computer.
+
+![ Figure 13 ](/Pictures/Figure13.png)
+
 The Output module has the following input, output and control signals:
 - I/O - loading data from the Bus into the Output Module, the original name is LO
 - CLK – clock signal that ensures synchronism in the operation of the computer
