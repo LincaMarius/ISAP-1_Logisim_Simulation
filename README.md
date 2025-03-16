@@ -231,7 +231,7 @@ The Output module has the following input, output and control signals:
 
 The implementation of the Output Module in Logisim is shown in the following figure:
 
-![ Figure 13 ](/Pictures/Figure13.png)
+![ Figure 14 ](/Pictures/Figure14.png)
 
 ### Control Block Implementation
 The Control Block is very important for the operation of any system and must be implemented with great care because the system's performance depends on it.
