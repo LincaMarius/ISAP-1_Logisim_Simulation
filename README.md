@@ -63,13 +63,13 @@ The first block to be implemented is Clock and Reset
 
 ### Clock and Reset Implementation
 The Clock and Reset Block has the following output signals:
-- CLK – clock signal that ensures synchronism in the operation of the computer
-- CLR – reset signal that initializes the Program Counter to zero
+- CLK – clock signal that ensures synchronism in the operation of the Computer
+- CLR – computer reset signal that initializes the Program Counter, Instruction Register and Control Unit.
 
-We have three control buttons: \
-S5 – Reset button \
-S6 – Single step button \
-S7 – Manual / Auto mode select
+We have three control buttons:
+S5 – Reset button
+S6 – Program Step button
+S7 – Mode selection switch: Manual / Auto
 
 This information can be seen in figure 3.
 
@@ -82,7 +82,7 @@ Program Counter has the following input, output and control signals:
 - CP – Program Counter Counting - increment Program Counter content
 - CLK – Clock - clock signal that ensures synchronism in the operation of the computer
 - CLR – Clear - reset signal that initializes the Program Counter to zero
-- Ep – Program Counter Enable - output activation for putting data from the Program Counter on the bus
+- EP – Program Counter Enable - output activation for putting data from the Program Counter on the bus
 - DOUT – Data Output – connects to the bus
 
 The implementation of the Program Counter Block in Logisim is shown in the following figure:
@@ -236,7 +236,7 @@ The design and implementation of the Control Block is presented in this reposito
 https://github.com/LincaMarius/ISAP-1_Control_Unit
 
 ### Implementation of the ISAP-1 Computer version 1 in Logisim
-The functional implementation of the ISAP-1 Computer version 1 in the Logisim program is presented in the file [ ISAP-1_revA_ver1.circ ](/Logisim/ISAP-1_revA_ver1.circ).
+The functional implementation of the ISAP-1 Computer version 1 in the Logisim software is presented in the file [ ISAP-1_revA_ver1.circ ](/Logisim/ISAP-1_revA_ver1.circ).
 
 An image of the computer implemented in the Logisim program after it has finished running the PRPGRAM_1 test program present in the ROM memory is:
 
