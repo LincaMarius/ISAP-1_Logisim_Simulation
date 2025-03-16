@@ -20,7 +20,7 @@ where I optimized the SAP-1 computer to create the ISAP-1 computer.
 
 ## ISAP-1 Model A Version 1
 
-The Structure of the SAP-1 computer is:
+The Structure of the ISAP-1 computer is:
 
 ![ Figure 1 ](/Pictures/Figure1.png)
 
