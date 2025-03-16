@@ -236,7 +236,7 @@ The design and implementation of the Control Block is presented in this reposito
 https://github.com/LincaMarius/ISAP-1_Control_Unit
 
 ### Implementation of the ISAP-1 Computer version 1 in Logisim
-The functional implementation of the ISAP-1 Computer version 1 in the Logisim software is presented in the file [ ISAP-1_revA_ver1.circ ](/Logisim/ISAP-1_revA_ver1.circ).
+The functional implementation of the ISAP-1 Computer version 1 in the Logisim software is presented in the file [ ISAP-1_revA_ver1.circ ](/Logisim/ISAP-1_modelA_ver1_0.circ).
 
 An image of the computer implemented in the Logisim program after it has finished running the PRPGRAM_1 test program present in the ROM memory is:
 
@@ -244,24 +244,24 @@ An image of the computer implemented in the Logisim program after it has finishe
 
 This program is:
 
-| Address | Instruction | Hexa |Assembly |    Action    |      Rezult      |
-|---------|-------------|------|---------|--------------|------------------|
-|  0000	  |  0000 0010  |  04  |  LDA 4  | A <- [4]	    | A = 44           |
-|  0001   |	 0001 0001  |  11  |  ADD 1  | A <- A + [1]	| A = 44 + 11 = 55 |
-|  0002   |	 0010 0000  |  20  |  SUB 0  | A <- A – [0]	| A = 55 – 4 = 51  |
-|  0003   |	 0011 0000  |  30  |  NOP	 |	    -		|       -	       |
-|  0004   |	 0100 0100  |  44  |  NOP	 |	    -		|       -	       |
-|  0005   |	 0101 0000  |  50  |  NOP	 |	    -		|       -	       |
-|  0006   |	 0110 0000  |  60  |  NOP	 |	    -		|       -	       |
-|  0007   |	 0111 0000  |  70  |  NOP	 |	    -		|       -	       |
-|  0008   |	 1000 0000  |  80  |  NOP	 |	    -		|       -	       |
-|  0009   |	 1001 0000  |  90  |  NOP	 |	    -		|       -	       |
-|  000A   |	 1010 0000  |  A0  |  NOP	 |	    -		|       -	       |
-|  000B   |	 1011 0000  |  B0  |  NOP	 |	    -		|       -	       |
-|  000C   |	 1100 0000  |  C0  |  NOP	 |	    -		|       -	       |
-|  000D   |	 1101 0000  |  D0  |  NOP	 |	    -		|       -	       |
-|  000E   |	 1110 0000  |  E0  |  OUT	 | OUT <- A		| OUT = 51	       |
-|  000F   |	 1111 0000  |  F0  |  HLT	 | HLT		    | HLT	           |
+| Address | Instruction | Hexa |Assembly |    Action    |      Rezult       |
+|---------|-------------|------|---------|--------------|-------------------|
+|  0000	  |  0000 0010  |  04  |  LDA 4  | A <- [4]	    | A = 44h           |
+|  0001   |	 0001 0001  |  11  |  ADD 1  | A <- A + [1]	| A = 44 + 11 = 55h |
+|  0002   |	 0010 0000  |  20  |  SUB 0  | A <- A – [0]	| A = 55 – 4 = 51h  |
+|  0003   |	 0011 0000  |  30  |  NOP	 |	    -		|       -	        |
+|  0004   |	 0100 0100  |  44  |  NOP	 |	    -		|       -	        |
+|  0005   |	 0101 0000  |  50  |  NOP	 |	    -		|       -	        |
+|  0006   |	 0110 0000  |  60  |  NOP	 |	    -		|       -	        |
+|  0007   |	 0111 0000  |  70  |  NOP	 |	    -		|       -	        |
+|  0008   |	 1000 0000  |  80  |  NOP	 |	    -		|       -	        |
+|  0009   |	 1001 0000  |  90  |  NOP	 |	    -		|       -	        |
+|  000A   |	 1010 0000  |  A0  |  NOP	 |	    -		|       -	        |
+|  000B   |	 1011 0000  |  B0  |  NOP	 |	    -		|       -	        |
+|  000C   |	 1100 0000  |  C0  |  NOP	 |	    -		|       -	        |
+|  000D   |	 1101 0000  |  D0  |  NOP	 |	    -		|       -	        |
+|  000E   |	 1110 0000  |  E0  |  OUT	 | OUT <- A		| OUT = 51h	        |
+|  000F   |	 1111 0000  |  F0  |  HLT	 | HLT		    | HLT	            |
 
 The contents of the ROM memory are: \
 [ ROM1 ](https://github.com/LincaMarius/ISAP-1_Programs/blob/main/ROMS/ROM1)
