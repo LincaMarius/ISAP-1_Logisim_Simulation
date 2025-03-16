@@ -244,7 +244,7 @@ The functional implementation of the ISAP-1 Computer version 1 in the Logisim so
 
 An image of the computer implemented in the Logisim program after it has finished running the PRPGRAM_1 test program present in the ROM memory is:
 
-![ Figure 14 ](/Pictures/Figure14.png)
+![ Figure 15 ](/Pictures/Figure15.png)
 
 This program is:
 
