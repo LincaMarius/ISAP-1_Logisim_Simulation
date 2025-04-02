@@ -187,6 +187,8 @@ Thus, the memory of the SAP-1 computer in Run mode is used as a ROM memory. Cont
 
 The RAM Memory module has the following inputs, outputs and control signals:
 - #CE – Chip Enable - activates the memory chip
+- #W – Write - determines the writing of data in memory
+- #OE – Output Enable – data output to the Bus is activated
 - Data – connects to the bus
 - Address – connects to the address bus
 
