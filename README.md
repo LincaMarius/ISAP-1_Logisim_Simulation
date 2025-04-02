@@ -18,42 +18,16 @@ https://github.com/LincaMarius/ISAP-Computer
 
 where I optimized the SAP-1 computer to create the ISAP-1 computer.
 
-## ISAP-1 Model A Version 1
-
-The Structure of the ISAP-1 computer is:
+## ISAP-1 TTL version 1.0
+The Structure of the ISAP-1 version 1.0 computer is:
 
 ![ Figure 1 ](/Pictures/Figure1.png)
 
-The Block Diagram of the Central Processing Unit of the ISAP-1 computer is:
+The block diagram of the Central Processing Unit of the ISAP-1 computer version 1.0 is:
 
 ![ Figure 2 ](/Pictures/Figure2.png)
 
-### The format of the SAP-1 computer instructions is:
-
-| 4 bits instruction code   | 4 bits operand (memory address)          |
-|---------------------------|------------------------------------------|
-
-We notice that the upper nibble is used to encode an instruction.
-
-So, any instruction is encoded on 4 bits.
-
-Thus, we can have a maximum of 2 ^ 4 = 16 instructions.
-
-### The original instruction set of the SAP-1 computer is:
-
-| Mnemonic | Opcode | Operation                                  |
-|----------|--------|--------------------------------------------|
-| LDA      | 0000   | Load RAM data into Accumulator             |
-| ADD      | 0001   | Add RAM data to Accumulator                |
-| SUB      | 0010   | Substract RAM data from accumulator        |
-| OUT      | 1110   | Load Accumulator data into Output Register |
-| HLT      | 1111   | Stop processing                            |
-
-We can notice that the instructions 0011, 0100, 0101, 0110, 0111, 1000, 1001, 1010, 1011, 1100, 1101 are not used. So we can add 11 more new instructions.
-
-In total, 5 out of 16 possible instructions are implemented.
-
-In order to simulate the SAP-1 computer using the Logisim program, we must design each individual module that makes up the computer.
+In order to simulate the SAP-1 computer using the Logisim program, we must design each individual module that makes up the SAP-1 computer.
 
 For this purpose we must use the detailed block diagram of the SAP-1 computer which is presented in the following figure.
 
@@ -62,13 +36,14 @@ For this purpose we must use the detailed block diagram of the SAP-1 computer wh
 The first block to be implemented is Clock and Reset
 
 ### Clock and Reset Implementation
-The Clock and Reset Block has the following output signals:
+The Clock and Reset block has the following output signals:
 - CLK – clock signal that ensures synchronism in the operation of the Computer
-- CLR – computer reset signal that initializes the Program Counter, Instruction Register and Control Unit.
+- CLR – computer reset signal that initializes the Program Counter, Instruction Register and Control Unit
+- HLT – blocks the clock signal, thus the execution of any future instruction is stopped
 
-We have three control buttons:
-S5 – Reset button
-S6 – Program Step button
+We have three control buttons: \
+S5 – Reset button \
+S6 – Program Step button \
 S7 – Mode selection switch: Manual / Auto
 
 This information can be seen in figure 3.
@@ -82,8 +57,8 @@ Program Counter has the following input, output and control signals:
 - CP – Program Counter Counting - increment Program Counter content
 - CLK – Clock - clock signal that ensures synchronism in the operation of the computer
 - CLR – Clear - reset signal that initializes the Program Counter to zero
-- EP – Program Counter Enable - output activation for putting data from the Program Counter on the bus
-- DOUT – Data Output – connects to the bus
+- EP – Program Counter Enable - output activation for putting data from the Program Counter on the Bus
+- DOUT – Data Output – connects to the Bus
 
 The implementation of the Program Counter Block in Logisim is shown in the following figure:
 
@@ -116,12 +91,12 @@ Pin R is to display when this block is reading from the Bus.
 
 ### Instruction Register implementation
 The Instruction Register has the following input, output and control signals:
-- LI - loading data from the bus into the Instruction Register
+- LI - loading data from the Bus into the Instruction Register
 - CLK – clock signal that ensures synchronism in the operation of the computer
 - CLR – reset signal that initializes the Instruction Register to zero
-- EI – enable output to put data from the Instruction Register on the bus
-- DIN - Data Input – connects to the bus
-- DOUT - Data Output – connects to the bus
+- EI – enable output to put data from the Instruction Register on the Bus
+- DIN - Data Input – connects to the Bus
+- DOUT - Data Output – connects to the Bus
 - INSTR – output where the current instruction is presented to the Control Block
 
 The implementation of the Instruction Register block in Logisim is shown in the following figure:
@@ -143,8 +118,8 @@ The Accumulator register has the following input, output and control signals:
 - LA - load data from the Bus into the Accumulator Register
 - CLK - clock signal that ensures synchronism in the operation of the computer
 - EA - output control for putting data from the Accumulator Register on the Bus
-- Data Input - connects to the Bus
-- Data Output - connects to the Bus
+- DIN - Data Input - connects to the Bus
+- DOUT - Data Output - connects to the Bus
 - ALUA - the contents of the Accumulator are connected to the Arithmetic and Logic Unit
 
 The implementation of the Accumulator Register block in Logisim is shown in the following figure:
@@ -177,7 +152,11 @@ The output is connected to the Logic and Arithmetic Unit permanently.
 
 Pin R is to display when this block is reading from the bus.
 
-### Arithmetic and Logic Unit Implementation
+### Adder/Subtractor Implementation
+The SAP-1 computer does not have an Arithmetic and Logical Unit because the Logical Unit is missing.
+
+In the following we used the ALU notation for simplicity, even though we only have one Adder/Subtractor
+
 The Arithmetic and Logic Unit has the following input, output and control signals:
 - ALUA – the contents of the Accumulator Register are connected to the Arithmetic and Logic Unit as operand A
 - ALUB – the contents of Register B are connected to the Logical and Arithmetic Unit as operand B
@@ -198,7 +177,9 @@ The output to the Bus is provided by a three-state buffer and is active only whe
 The W pin has the role of displaying when the Result is writing to the Bus.
 
 ### Implementation of the RAM Memory module
-Figure 11 shows the Memory Block of the SAP-1 Computer seen from a functional point of view by the Computer when running a program.
+Figure 1 shows the structure of the SAP-1 computer seen from a modular point of view.
+
+Figure 11 shows the Memory block of the SAP-1 computer and its connection to the system.
 
 ![ Figure 11 ](/Pictures/Figure11.png)
 
