@@ -228,8 +228,8 @@ The Control Block is very important for the operation of any system and must be 
 The design and implementation of the Control Block is presented in this repository: \
 https://github.com/LincaMarius/ISAP-1_Control_Unit
 
-### Implementation of the ISAP-1 Computer version 1 in Logisim
-The functional implementation of the ISAP-1 Computer version 1 in the Logisim software is presented in the file [ ISAP-1_revA_ver1.circ ](/Logisim/ISAP-1_modelA_ver1_0.circ).
+### Implementation of the ISAP-1 Computer version 1.0 in Logisim
+The functional implementation of the ISAP-1 Computer version 1 in the Logisim software is presented in the file [ ISAP-1_ver1_0.circ ](/Logisim/ISAP-1_ver1_0.circ).
 
 An image of the computer implemented in the Logisim program after it has finished running the PRPGRAM_1 test program present in the ROM memory is:
 
