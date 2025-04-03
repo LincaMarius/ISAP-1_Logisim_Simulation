@@ -198,7 +198,7 @@ After studying the Block Diagram of the SAP-1 computer, I determined that from a
 
 This aspect is shown in the following figure.
 
-
+![ Figure 12 ](/Pictures/Figure12.png)
 
 I came to the conclusion that I can use a ROM memory model provided by the Logisim program.
 
@@ -206,7 +206,7 @@ The ROM memory model implemented in the Logisim program has the sel input which,
 
 This behavior allows the DM control signal to be directly connected to the sel pin of the ROM memory in the Logisim program.
 
-![ Figure 12 ](/Pictures/Figure12.png)
+![ Figure 13 ](/Pictures/Figure13.png)
 
 ### Output Module Implementation
 Figure 13 shows the Block Diagram of the Output Module of the ISAP-1 computer.
