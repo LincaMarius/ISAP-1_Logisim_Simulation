@@ -194,6 +194,12 @@ The RAM Memory module has the following inputs, outputs and control signals:
 
 It is noted that the RAM used does not have a #OE control pin for output inhibition, this function is taken over by the #CE pin.
 
+After studying the Block Diagram of the SAP-1 computer, I determined that from a functional point of view the memory is used only in read mode. Therefore, it can be considered a ROM memory behavior.
+
+This aspect is shown in the following figure.
+
+
+
 I came to the conclusion that I can use a ROM memory model provided by the Logisim program.
 
 The ROM memory model implemented in the Logisim program has the sel input which, if high, presents the data at the selected address at the output. When the sel pin is low, the output goes into high impedance mode.
