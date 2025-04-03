@@ -209,9 +209,9 @@ This behavior allows the DM control signal to be directly connected to the sel p
 ![ Figure 13 ](/Pictures/Figure13.png)
 
 ### Output Module Implementation
-Figure 13 shows the Block Diagram of the Output Module of the ISAP-1 computer.
+Figure 14 shows the Block Diagram of the Output Module of the ISAP-1 computer.
 
-![ Figure 13 ](/Pictures/Figure13.png)
+![ Figure 14 ](/Pictures/Figure14.png)
 
 The Output module has the following input, output and control signals:
 - I/O - loading data from the Bus into the Output Module, the original name is LO
@@ -220,7 +220,7 @@ The Output module has the following input, output and control signals:
 
 The implementation of the Output Module in Logisim is shown in the following figure:
 
-![ Figure 14 ](/Pictures/Figure14.png)
+![ Figure 15 ](/Pictures/Figure15.png)
 
 ### Control Block Implementation
 The Control Block is very important for the operation of any system and must be implemented with great care because the system's performance depends on it.
