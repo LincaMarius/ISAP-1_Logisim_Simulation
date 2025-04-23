@@ -66,7 +66,11 @@ The implementation of the Program Counter Block in Logisim is shown in the follo
 
 The Program Counter is made with 4 JK Flip-Flops and increments the stored numerical value if the CP control signal is active and the positive edge of the clock signal occurs.
 
+This action occurs for any instruction during [ microstep T2 ](https://github.com/LincaMarius/ISAP-1_Instruction_Set/blob/main/Pictures/Figure3.png).
+
 The output of this register is connected to the 4 least significant bits of the Bus through a 4-bit 3-state Buffer. The other 4 most significant bits are not connected and because we are using TTL logic circuits will appear to be high. The output is active only when the EP control signal is high.
+
+This action occurs for any instruction during [ microstep T1 ](https://github.com/LincaMarius/ISAP-1_Instruction_Set/blob/main/Pictures/Figure3.png).
 
 The PROBE pins are used to view the contents of the Program Counter regardless of whether the output is in tri-state mode.
 
@@ -84,6 +88,8 @@ The implementation of the Address Register Block in Logisim is shown in the foll
 ![ Figure 6 ](/Pictures/Figure6.png)
 
 The Address Register is implemented with a 4-bit register and stores the 4 least significant bits of data received from the Bus when the LAR control signal is active and the rising edge of the clock signal occurs.
+
+This action occurs for any instruction during [ microstep T1 ](https://github.com/LincaMarius/ISAP-1_Instruction_Set/blob/main/Pictures/Figure3.png).
 
 The output of this register is connected to 4 bits of the Address Bus. The output is permanently active.
 
@@ -105,7 +111,11 @@ The implementation of the Instruction Register block in Logisim is shown in the 
 
 The Instruction Register is implemented with an 8-bit register and stores 8 bits of data received from the Bus when the control signal LI is active and the rising edge of the clock signal occurs.
 
+This action occurs for any instruction during [ microstep T3 ](https://github.com/LincaMarius/ISAP-1_Instruction_Set/blob/main/Pictures/Figure3.png).
+
 The lower nibble stored in the Instruction Register is presented on the bus output if the EI control signal is high and represents the parameter of the instruction being executed. The output is tri-stated using a 4-bit buffer and is active only when the EI control signal is high.
+
+The value of this parameter of the instruction being executed represents a memory address and is loaded into the Address Register at [ micro-step T4 ](https://github.com/LincaMarius/ISAP-1_Instruction_Set/blob/main/Pictures/Figure4.png) of all instructions that have a parameter.
 
 The PROBE pin are used to view the contents of the block regardless of whether the output is in tri-state mode.
 
@@ -115,9 +125,9 @@ The INSTR pin presents the current instruction to the Control Block where it is 
 
 ### Implementation of the Accumulator Register
 The Accumulator register has the following input, output and control signals:
-- LA - load data from the Bus into the Accumulator Register
-- CLK - clock signal that ensures synchronism in the operation of the computer
-- EA - output control for putting data from the Accumulator Register on the Bus
+- LA – Load Accumulator - load data from the Bus into the Accumulator Register
+- CLK – Clock - clock signal that ensures synchronism in the operation of the computer
+- EA – Enable Accumulator - output control for putting data from the Accumulator Register on the Bus
 - DIN - Data Input - connects to the Bus
 - DOUT - Data Output - connects to the Bus
 - ALUA - the contents of the Accumulator are connected to the Arithmetic and Logic Unit
@@ -128,7 +138,11 @@ The implementation of the Accumulator Register block in Logisim is shown in the 
 
 The Accumulator Register is implemented with an 8-bit register that stores the data present at the input from the Bus when the LA control signal is high and the rising edge of the clock signal occurs.
 
+This action occurs for all instructions involving the Accumulator such as: LDA, ADD, SUB and can be active during [ micro-step T5 ](https://github.com/LincaMarius/ISAP-1_Instruction_Set/blob/main/Pictures/Figure4.png) or [ micro-step T6 ](https://github.com/LincaMarius/ISAP-1_Instruction_Set/blob/main/Pictures/Figure5.png).
+
 The output is provided by a three-state buffer and is active only when the EA control signal is high.
+
+This action occurs when the OUT instruction is executed and is active for the duration of [ micro-step T4 ](https://github.com/LincaMarius/ISAP-1_Instruction_Set/blob/main/Pictures/Figure7.png).
 
 The PROBE pin is used to view the contents of the block regardless of whether the output is in tri-state mode.
 
@@ -148,18 +162,20 @@ The implementation of the Register B block in Logisim is shown in the following 
 
 Register B is implemented with an 8-bit register and stores 8 bits of data received from the Bus when the control signal LB is active and the rising edge of the clock signal occurs.
 
+This action occurs for any arithmetic instruction with are ADD and SUB during [ micro-step T5 ](https://github.com/LincaMarius/ISAP-1_Instruction_Set/blob/main/Pictures/Figure5.png).
+
 The output is connected to the Logic and Arithmetic Unit permanently.
 
 Pin R is to display when this block is reading from the bus.
 
 ### Adder/Subtractor Implementation
-The SAP-1 computer does not have an Arithmetic and Logical Unit because the Logical Unit is missing.
+The SAP-1 computer does not have an Arithmetic and Logical Unit because the Logical Unit is missing. So we only have an Arithmetic Unit.
 
-In the following we used the ALU notation for simplicity, even though we only have one Adder/Subtractor
+In the following we used the ALU notation for simplicity, even though we only have one Adder/Subtractor.
 
-The Arithmetic and Logic Unit has the following input, output and control signals:
-- ALUA – the contents of the Accumulator Register are connected to the Arithmetic and Logic Unit as operand A
-- ALUB – the contents of Register B are connected to the Logical and Arithmetic Unit as operand B
+The Arithmetic Unit has the following input, output and control signals:
+- ALUA – the contents of the Accumulator Register are connected to the Arithmetic Unit as operand A
+- ALUB – the contents of Register B are connected to the Arithmetic Unit as operand B
 - SU - Subtraction – control signal that activates subtraction operation to be performed if it is high
 - EU - control signal that commands the activation of the outputs to put on the Bus the Result of the arithmetic operation performed
 - DOUT - Data Output – connects to the bus
@@ -170,14 +186,18 @@ The implementation of the Arithmetic and Logical Unit in Logisim is shown in the
 
 The Arithmetic and Logic Unit has as its main element an 8-bit Adder. The addition calculation is performed continuously.
 
+This means that any change to any ALUA or ALUB input data immediately causes the output result to change. In reality there is a propagation delay of about 25ns for the 74LS83 chip.
+
 The Subtraction operation is done by inverting the value of operand B (one's complement) and adds one by applying the SU signal to the Carry In input (two's complement).
 
 The output to the Bus is provided by a three-state buffer and is active only when the EU control signal is high.
 
+This action occurs for any arithmetic instruction with are ADD and SUB during [ micro-step T6 ](https://github.com/LincaMarius/ISAP-1_Instruction_Set/blob/main/Pictures/Figure5.png).
+
 The W pin has the role of displaying when the Result is writing to the Bus.
 
 ### Implementation of the RAM Memory module
-Figure 1 shows the structure of the SAP-1 computer seen from a modular point of view.
+[ Figure 1 ]( https://github.com/LincaMarius/ISAP-1_Logisim_Simulation/blob/main/Pictures/Figure1.png) shows the structure of the SAP-1 computer seen from a modular point of view.
 
 Figure 11 shows the Memory block of the SAP-1 computer and its connection to the system.
 
@@ -192,7 +212,7 @@ The RAM Memory module has the following inputs, outputs and control signals:
 - Data – connects to the bus
 - Address – connects to the address bus
 
-It is noted that the RAM used does not have a #OE control pin for output inhibition, this function is taken over by the #CE pin.
+It is noted that the RAM memory used, type 74LS83, does not have a control pin #OE for output inhibition, this function is taken over by the pin #CE.
 
 After studying the Block Diagram of the SAP-1 computer, I determined that from a functional point of view the memory is used only in read mode. Therefore, it can be considered a ROM memory behavior.
 
@@ -202,14 +222,14 @@ This aspect is shown in the following figure.
 
 I came to the conclusion that I can use a ROM memory model provided by the Logisim program.
 
-The ROM memory model implemented in the Logisim program has the sel input which, if high, presents the data at the selected address at the output. When the sel pin is low, the output goes into high impedance mode.
+The ROM memory model implemented in the Logisim program has the *sel* input which, if high, presents the data at the selected address at the output. When the *sel* pin is low, the output goes into high impedance mode.
 
-This behavior allows the DM control signal to be directly connected to the sel pin of the ROM memory in the Logisim program.
+This behavior allows the PM control signal to be directly connected to the *sel* pin of the ROM memory in the Logisim program.
 
 ![ Figure 13 ](/Pictures/Figure13.png)
 
 ### Output Module Implementation
-Figure 14 shows the Block Diagram of the Output Module of the ISAP-1 computer.
+Figure 14 shows the Block Diagram of the Output Module of the SAP-1 computer and the ISAP-1 computer.
 
 ![ Figure 14 ](/Pictures/Figure14.png)
 
@@ -231,7 +251,7 @@ https://github.com/LincaMarius/ISAP-1_Control_Unit
 ### Implementation of the ISAP-1 Computer version 1.0 in Logisim
 The functional implementation of the ISAP-1 Computer version 1 in the Logisim software is presented in the file [ ISAP-1_ver1_0.circ ](/Logisim/ISAP-1_ver1_0.circ).
 
-An image of the computer implemented in the Logisim program after it has finished running the PRPGRAM_1 test program present in the ROM memory is:
+An image of the computer implemented in the Logisim program after it has finished running the [ PRPGRAM_1 ]( https://github.com/LincaMarius/ISAP-1_Programs?tab=readme-ov-file#program-1) test program present in the ROM memory is:
 
 ![ Figure 16 ](/Pictures/Figure16.png)
 
