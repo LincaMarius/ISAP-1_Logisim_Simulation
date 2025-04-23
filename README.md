@@ -18,16 +18,16 @@ https://github.com/LincaMarius/ISAP-Computer
 
 where I optimized the SAP-1 computer to create the ISAP-1 computer.
 
-## ISAP-1 TTL version 1.0
-The Structure of the ISAP-1 version 1.0 computer is:
+## ISAP-1 version 1.0
+The Structure of the ISAP-1 computer version 1.0 is:
 
 ![ Figure 1 ](/Pictures/Figure1.png)
 
-The block diagram of the Central Processing Unit of the ISAP-1 computer version 1.0 is:
+The Block Diagram of the Central Processing Unit of the ISAP-1 computer version 1.0 is:
 
 ![ Figure 2 ](/Pictures/Figure2.png)
 
-In order to simulate the SAP-1 computer using the Logisim program, we must design each individual module that makes up the SAP-1 computer.
+In order to simulate the SAP-1 computer using the Logisim software, we must design each individual module that makes up the SAP-1 computer.
 
 For this purpose we must use the detailed block diagram of the SAP-1 computer which is presented in the following figure.
 
@@ -36,7 +36,7 @@ For this purpose we must use the detailed block diagram of the SAP-1 computer wh
 The first block to be implemented is Clock and Reset
 
 ### Clock and Reset Implementation
-The Clock and Reset block has the following output signals:
+The Clock and Reset block has the following input-output signals:
 - CLK – clock signal that ensures synchronism in the operation of the Computer
 - CLR – computer reset signal that initializes the Program Counter, Instruction Register and Control Unit
 - HLT – blocks the clock signal, thus the execution of any future instruction is stopped
