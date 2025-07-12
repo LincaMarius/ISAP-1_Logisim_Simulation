@@ -21,9 +21,9 @@ The Structure of the ISAP-1 computer version 0.1 is:
 
 ![ Figure 20 ](/Pictures/Figure20.png)
 
-The Block Diagram of the Central Processing Unit of the ISAP-1 computer version 1.0 is:
+The Block Diagram of the Central Processing Unit of the ISAP-1 computer version 0.1 is:
 
-![ Figure 2 ](/Pictures/Figure2.png)
+![ Figure 21 ](/Pictures/Figure21.png)
 
 In order to simulate the SAP-1 computer using the Logisim software, we must design each individual module that makes up the SAP-1 computer.
 
