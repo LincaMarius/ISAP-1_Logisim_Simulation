@@ -3,9 +3,7 @@ The improved version of the SAP-1 computer.
 
 This is the process of making the ISAP-1 computer at the simulation level using the Logisim software, presented step by step.
 
-By: Lincă Marius Gheorghe,
-
-Pitești, Argeș, Romania, Europe.
+By: Lincă Marius Gheorghe
 
 https://github.com/LincaMarius
 
@@ -18,10 +16,10 @@ https://github.com/LincaMarius/ISAP-Computer
 
 where I optimized the SAP-1 computer to create the ISAP-1 computer.
 
-## ISAP-1 version 1.0
-The Structure of the ISAP-1 computer version 1.0 is:
+## ISAP-1 version 0.1
+The Structure of the ISAP-1 computer version 0.1 is:
 
-![ Figure 1 ](/Pictures/Figure1.png)
+![ Figure 20 ](/Pictures/Figure20.png)
 
 The Block Diagram of the Central Processing Unit of the ISAP-1 computer version 1.0 is:
 
