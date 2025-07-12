@@ -25,6 +25,10 @@ The Block Diagram of the Central Processing Unit of the ISAP-1 computer version 
 
 ![ Figure 21 ](/Pictures/Figure21.png)
 
+The Block Diagram of the SAP-1 computer version 0.1 is:
+
+![ Figure 22 ](/Pictures/Figure22.png)
+
 In order to simulate the SAP-1 computer using the Logisim software, we must design each individual module that makes up the SAP-1 computer.
 
 For this purpose we must use the detailed block diagram of the SAP-1 computer which is presented in the following figure.
