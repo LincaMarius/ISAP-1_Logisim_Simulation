@@ -29,6 +29,10 @@ The Block Diagram of the SAP-1 computer version 0.1 is:
 
 ![ Figure 22 ](/Pictures/Figure22.png)
 
+The Block Diagram of the Control Unit version 0.1 is:
+
+![ Figure 23 ](/Pictures/Figure23.png)
+
 In order to simulate the SAP-1 computer using the Logisim software, we must design each individual module that makes up the SAP-1 computer.
 
 For this purpose we must use the detailed block diagram of the SAP-1 computer which is presented in the following figure.
