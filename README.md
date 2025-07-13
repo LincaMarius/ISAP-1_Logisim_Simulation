@@ -129,3 +129,6 @@ https://github.com/LincaMarius/ISAP-1_Control_Unit
 ### Implementation of the ISAP-1 Computer version 0.1 in Logisim
 The functional implementation of the ISAP-1 Computer version 1 in the Logisim program is presented in the file [ ISAP-1_ver0_1.circ ](/Logisim/ISAP-1_ver0_1.circ).
 
+An image of the computer implemented in the Logisim program while running is shown in the following figure:
+
+![ Figure 31 ](/Pictures/Figure31.png)
