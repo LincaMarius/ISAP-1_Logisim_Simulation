@@ -109,3 +109,14 @@ The Instruction Register has the following input, output and control signals:
 The implementation of the Instruction Register block in Logisim is shown in the following figure:
 
 ![ Figure 30 ](/Pictures/Figure30.png)
+
+The Instruction Register is implemented with an 8-bit register and stores 8 bits of data received from the Bus when the control signal LI is active and the rising edge of the clock signal occurs.
+
+This action occurs for any instruction during [ microstep T3 ](https://github.com/LincaMarius/ISAP-1_Instruction_Set/blob/main/Pictures/Figure3.png).
+
+The PROBE pin is used to view the contents of the block regardless of whether the output is in tri-state mode.
+
+The R pin is used to display when this block is reading data from the bus.
+
+The INSTR pin presents the current instruction to the Control Block where it is decoded.
+
