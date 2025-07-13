@@ -87,3 +87,25 @@ The Address Register has the following input, output and control signals:
 The implementation of the Address Register block in Logisim is shown in the following figure:
 
 ![ Figure 29 ](/Pictures/Figure29.png)
+
+The Address Register is implemented with a 4-bit register and stores the 4 least significant bits of data received from the Bus when the LAR control signal is active and the rising edge of the clock signal occurs.
+
+This action occurs for any instruction during [ microstep T1 ](https://github.com/LincaMarius/ISAP-1_Instruction_Set/blob/main/Pictures/Figure3.png).
+
+The output of this register is connected to 4 bits of the Address Bus. The output is permanently active.
+
+Pin R is to display when this block is reading from the Bus.
+
+### Instruction Register implementation
+The Instruction Register has the following input, output and control signals:
+- LI - loading data from the Bus into the Instruction Register
+- CLK – clock signal that ensures synchronism in the operation of the computer
+- CLR – reset signal that initializes the Instruction Register to zero
+- EI – enable output to put data from the Instruction Register on the Bus
+- DIN - Data Input – connects to the Bus
+- DOUT - Data Output – connects to the Bus
+- INSTR – output where the current instruction is presented to the Control Block
+
+The implementation of the Instruction Register block in Logisim is shown in the following figure:
+
+![ Figure 30 ](/Pictures/Figure30.png)
