@@ -64,3 +64,7 @@ Program Counter has the following input, output and control signals:
 The implementation of the Program Counter block in Logisim is shown in the following figure:
 
 ![ Figure 28 ](/Pictures/Figure28.png)
+
+The Program Counter is made with 4 JK flip-flops and increments the stored numerical value if the CP control signal is active and the positive edge of the clock signal occurs.
+
+This action occurs for any instruction during [ microstep T2 ](https://github.com/LincaMarius/ISAP-1_Instruction_Set/blob/main/Pictures/Figure3.png).
