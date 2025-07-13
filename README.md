@@ -120,3 +120,12 @@ The R pin is used to display when this block is reading data from the bus.
 
 The INSTR pin presents the current instruction to the Control Block where it is decoded.
 
+### Control Block Implementation
+The Control Block is very important for the operation of any system and must be implemented with great care because the system's performance depends on it.
+
+The design and implementation of the Control Block is presented in this repository:
+https://github.com/LincaMarius/ISAP-1_Control_Unit
+
+### Implementation of the ISAP-1 Computer version 0.1 in Logisim
+The functional implementation of the ISAP-1 Computer version 1 in the Logisim program is presented in the file [ ISAP-1_ver0_1.circ ](/Logisim/ISAP-1_ver0_1.circ).
+
