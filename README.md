@@ -51,5 +51,16 @@ This information can be seen in figure 3.
 
 The implementation of the Clock and Reset Block in Logisim software is shown in the following figure
 
+![ Figure 27 ](/Pictures/Figure27.png)
 
+### Program Counter implementation
+Program Counter has the following input, output and control signals:
+- CP – Program Counter Counting - increment Program Counter content
+- CLK – Clock - clock signal that ensures synchronism in the operation of the computer
+- CLR – Clear - reset signal that initializes the Program Counter to zero
+- Ep – Program Counter Enable - output activation for putting data from the Program Counter on the Bus
+- DOUT – Data Output – connects to the Bus
 
+The implementation of the Program Counter block in Logisim is shown in the following figure:
+
+![ Figure 28 ](/Pictures/Figure28.png)
