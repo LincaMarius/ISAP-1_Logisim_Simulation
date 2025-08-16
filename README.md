@@ -25,11 +25,12 @@ The Block Diagram of the Central Processing Unit of the ISAP-1 computer version 
 
 ![ Figure 14 ](https://github.com/LincaMarius/ISAP-1_Block_Diagram/blob/main/Pictures/Figure14.png)
 
-The Block Diagram of the SAP-1 computer version 0.1 is:
-
-![ Figure 22 ](/Pictures/Figure22.png)
-
 The Block Diagram of the Control Unit version 0.1 is:
+
+![ Figure 15 ](https://github.com/LincaMarius/ISAP-1_Block_Diagram/blob/main/Pictures/Figure15.png)
+
+
+
 
 ![ Figure 23 ](/Pictures/Figure23.png)
 
