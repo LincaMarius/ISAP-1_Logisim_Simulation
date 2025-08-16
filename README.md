@@ -87,7 +87,7 @@ The implementation of the Address Register block in Logisim is shown in the foll
 
 The Address Register is implemented with a 4-bit register and stores the 4 least significant bits of data received from the Bus when the LAR control signal is active and the rising edge of the clock signal occurs.
 
-This action occurs for any instruction during [ microstep T1 ](https://github.com/LincaMarius/ISAP-1_Instruction_Set/blob/main/Pictures/Figure3.png).
+This action occurs for any instruction during [ microstep T1 ](https://github.com/LincaMarius/ISAP-1_Instruction_Set/blob/main/Pictures/Figure1.png).
 
 The output of this register is connected to 4 bits of the Address Bus. The output is permanently active.
 
@@ -105,7 +105,7 @@ The Instruction Register has the following input, output and control signals:
 
 The implementation of the Instruction Register block in Logisim is shown in the following figure:
 
-![ Figure 30 ](/Pictures/Figure30.png)
+![ Figure 40 ](/Pictures/Figure40.png)
 
 The Instruction Register is implemented with an 8-bit register and stores 8 bits of data received from the Bus when the control signal LI is active and the rising edge of the clock signal occurs.
 
