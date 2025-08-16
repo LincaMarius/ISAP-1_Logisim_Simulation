@@ -16,10 +16,10 @@ https://github.com/LincaMarius/ISAP-Computer
 
 where I optimized the SAP-1 computer to create the ISAP-1 computer.
 
-## ISAP-1 version 0.1
+## ISAP-1 computer version 0.1
 The Structure of the ISAP-1 computer version 0.1 is:
 
-![ Figure 20 ](/Pictures/Figure20.png)
+![ Figure 26 ](https://github.com/LincaMarius/ISAP-1_Block_Diagram/blob/main/Pictures/Figure26.png)
 
 The Block Diagram of the Central Processing Unit of the ISAP-1 computer version 0.1 is:
 
