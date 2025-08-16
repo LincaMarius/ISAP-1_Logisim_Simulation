@@ -134,15 +134,19 @@ The implementation of the Accumulator Register block in Logisim is shown in the 
 
 ![ Figure 41 ](/Pictures/Figure41.png)
 
+The Accumulator Register is implemented with an 8-bit register that stores the data present at the input from the Bus when the LA control signal is high and the rising edge of the clock signal occurs.
 
+This action occurs for all instructions involving the Accumulator such as: LDA, ADD, SUB and can be active during 
+[ micro-step T5 ](https://github.com/LincaMarius/ISAP-1_Instruction_Set/blob/main/Pictures/Figure2.png) or 
+[ micro-step T6 ](https://github.com/LincaMarius/ISAP-1_Instruction_Set/blob/main/Pictures/Figure3.png).
 
+The output is provided by a three-state buffer and is active only when the EA control signal is high.
 
+This action occurs when the OUT instruction is executed and is active for the duration of [ micro-step T4 ](https://github.com/LincaMarius/ISAP-1_Instruction_Set/blob/main/Pictures/Figure7.png).
 
+The PROBE pin is used to view the contents of the block regardless of whether the output is in tri-state mode.
 
-
-
-
-
+Pins W and R, are to indicate when this block is writing or reading from the bus.
 
 
 ### Control Block Implementation
