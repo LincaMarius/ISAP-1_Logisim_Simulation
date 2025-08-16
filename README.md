@@ -121,6 +121,30 @@ Pins W and R, are to indicate when this block is writing or reading from the Bus
 
 The INSTR pin presents the current instruction to the Control Block where it is decoded.
 
+### Implementation of the Accumulator Register
+The Accumulator register has the following input, output and control signals:
+- LA – Load Accumulator - load data from the Bus into the Accumulator Register
+- CLK – Clock - clock signal that ensures synchronism in the operation of the computer
+- EA – Enable Accumulator - output control for putting data from the Accumulator Register on the Bus
+- DIN - Data Input - connects to the Bus
+- DOUT - Data Output - connects to the Bus
+- ALUA - the contents of the Accumulator are connected to the Arithmetic and Logic Unit
+
+The implementation of the Accumulator Register block in Logisim is shown in the following figure:
+
+![ Figure 41 ](/Pictures/Figure41.png)
+
+
+
+
+
+
+
+
+
+
+
+
 ### Control Block Implementation
 The Control Block is very important for the operation of any system and must be implemented with great care because the system's performance depends on it.
 
