@@ -48,7 +48,7 @@ This information can be seen in [Figure 11](https://github.com/LincaMarius/ISAP-
 
 The implementation of the Clock and Reset Block in Logisim software is shown in the following figure
 
-![ Figure 27 ](/Pictures/Figure27.png)
+![ Figure 37 ](/Pictures/Figure37.png)
 
 ### Program Counter implementation
 Program Counter has the following input, output and control signals:
