@@ -29,11 +29,6 @@ The Block Diagram of the Control Unit version 0.1 is:
 
 ![ Figure 15 ](https://github.com/LincaMarius/ISAP-1_Block_Diagram/blob/main/Pictures/Figure15.png)
 
-
-
-
-![ Figure 23 ](/Pictures/Figure23.png)
-
 In order to simulate the SAP-1 computer using the Logisim software, we must design each individual module that makes up the SAP-1 computer.
 
 The first block to be implemented is Clock and Reset
@@ -42,13 +37,14 @@ The first block to be implemented is Clock and Reset
 The Clock and Reset block has the following input-output signals:
 - CLK – clock signal that ensures synchronism in the operation of the Computer
 - CLR – computer reset signal that initializes the Program Counter, Instruction Register and Control Unit
+- HLT – blocks the clock signal, thus the execution of any future instruction is stopped
 
 We have three control buttons: \
 S5 – Reset button \
 S6 – Program Step button \
 S7 – Mode selection switch: Manual / Auto
 
-This information can be seen in figure 3.
+This information can be seen in [Figure 11](https://github.com/LincaMarius/ISAP-1_Block_Diagram/blob/main/Pictures/Figure11.png), [Figure 24](https://github.com/LincaMarius/ISAP-1_Block_Diagram/blob/main/Pictures/Figure24.png) and [Figure 25](https://github.com/LincaMarius/ISAP-1_Block_Diagram/blob/main/Pictures/Figure25.png).
 
 The implementation of the Clock and Reset Block in Logisim software is shown in the following figure
 
