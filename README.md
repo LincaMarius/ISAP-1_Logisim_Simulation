@@ -55,12 +55,12 @@ Program Counter has the following input, output and control signals:
 - CP – Program Counter Counting - increment Program Counter content
 - CLK – Clock - clock signal that ensures synchronism in the operation of the computer
 - CLR – Clear - reset signal that initializes the Program Counter to zero
-- Ep – Program Counter Enable - output activation for putting data from the Program Counter on the Bus
+- EP – Program Counter Enable - output activation for putting data from the Program Counter on the Bus
 - DOUT – Data Output – connects to the Bus
 
-The implementation of the Program Counter block in Logisim is shown in the following figure:
+The implementation of the Program Counter Block in Logisim is shown in the following figure:
 
-![ Figure 28 ](/Pictures/Figure28.png)
+![ Figure 38 ](/Pictures/Figure38.png)
 
 The Program Counter is made with 4 JK flip-flops and increments the stored numerical value if the CP control signal is active and the positive edge of the clock signal occurs.
 
