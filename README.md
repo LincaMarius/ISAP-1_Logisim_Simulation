@@ -263,8 +263,8 @@ The Binary Display consists of 8 LEDs connected directly to the output of the Ou
 ![ Figure 48 ](/Pictures/Figure48.png)
 
 ### Implementation of the ISAP-1 Computer version 0.1 in Logisim
-The functional implementation of the ISAP-1 Computer version 1 in the Logisim program is presented in the file [ ISAP-1_ver0_1.circ ](/Logisim/ISAP-1_ver0_1.circ).
+The functional implementation of the ISAP-1 Computer version 0.1 in the Logisim program is presented in the file [ ISAP-1_ver_0_1.circ ](/Logisim/ ISAP-1_ver_0_1.circ).
 
-An image of the computer implemented in the Logisim program while running is shown in the following figure:
+An image of the computer implemented in the Logisim program after it has finished running the [ PRPGRAM_1 ]( https://github.com/LincaMarius/ISAP-1_Programs?tab=readme-ov-file#program-1) test program present in the ROM memory is:
 
-![ Figure 31 ](/Pictures/Figure31.png)
+![ Figure 49 ](/Pictures/Figure49.png)
