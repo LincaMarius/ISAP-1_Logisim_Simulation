@@ -227,6 +227,17 @@ This aspect is shown in the following figure.
 
 ![ Figure 45 ](/Pictures/Figure45.png)
 
+I came to the conclusion that I can use a ROM memory model provided by the Logisim program.
+
+The ROM memory model implemented in the Logisim program has the *sel* input which, if high, presents the data at the selected address at the output. When the *sel* pin is low, the output goes into high impedance mode.
+
+This behavior allows the PM control signal to be directly connected to the *sel* pin of the ROM memory in the Logisim program.
+
+![ Figure 46 ](/Pictures/Figure46.png)
+
+
+
+
 ### Implementation of the ISAP-1 Computer version 0.1 in Logisim
 The functional implementation of the ISAP-1 Computer version 1 in the Logisim program is presented in the file [ ISAP-1_ver0_1.circ ](/Logisim/ISAP-1_ver0_1.circ).
 
