@@ -221,6 +221,12 @@ Thus, the memory of the SAP-1 computer in Run mode is used as a ROM memory. Cont
 
 ![ Figure 19 ](https://github.com/LincaMarius/ISAP-1_Block_Diagram/blob/main/Pictures/Figure19.png)
 
+After studying the Block Diagram of the SAP-1 computer, I determined that from a functional point of view the memory is used only in read mode. Therefore, it can be considered a ROM memory behavior.
+
+This aspect is shown in the following figure.
+
+![ Figure 45 ](/Pictures/Figure45.png)
+
 ### Implementation of the ISAP-1 Computer version 0.1 in Logisim
 The functional implementation of the ISAP-1 Computer version 1 in the Logisim program is presented in the file [ ISAP-1_ver0_1.circ ](/Logisim/ISAP-1_ver0_1.circ).
 
