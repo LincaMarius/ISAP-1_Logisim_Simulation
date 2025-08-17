@@ -212,6 +212,15 @@ The implementation of the Control Unit in Logisim is shown in the following figu
 
 ![ Figure 44 ](/Pictures/Figure44.png)
 
+### Implementation of the RAM Memory module
+In [Figure 23](https://github.com/LincaMarius/ISAP-1_Block_Diagram/blob/main/Pictures/Figure23.png) the Memory block of the SAP-1 computer and its connection to the system are shown.
+
+![ Figure 23 ](https://github.com/LincaMarius/ISAP-1_Block_Diagram/blob/main/Pictures/Figure23.png)
+
+Thus, the memory of the SAP-1 computer in Run mode is used as a ROM memory. Control input #CE if high disables the output which is three-state, and if low at the output the data from the selected address is presented. This is shown in the following figure:
+
+![ Figure 19 ](https://github.com/LincaMarius/ISAP-1_Block_Diagram/blob/main/Pictures/Figure19.png)
+
 ### Implementation of the ISAP-1 Computer version 0.1 in Logisim
 The functional implementation of the ISAP-1 Computer version 1 in the Logisim program is presented in the file [ ISAP-1_ver0_1.circ ](/Logisim/ISAP-1_ver0_1.circ).
 
