@@ -235,8 +235,32 @@ This behavior allows the PM control signal to be directly connected to the *sel*
 
 ![ Figure 46 ](/Pictures/Figure46.png)
 
+### Output Module Implementation
+The following figure shows the Block Diagram of the Output Module of the SAP-1 computer and the ISAP-1 computer.
 
+![ Figure 16 ](https://github.com/LincaMarius/ISAP-1_Block_Diagram/blob/main/Pictures/Figure16.png)
 
+The Output Module consists of the Output Register and the Binary Display.
+
+The Output Register has the following input, output and control signals:
+- I/O - loading data from the bus into the Output Module, the original name is LO
+- CLK – clock signal that ensures synchronism in the operation of the computer
+- DIN - Data Input – connects to the bus
+- OUT – Data Output – where the contents of the Register are presented.
+
+The implementation of the Output Register in Logisim is shown in the following figure:
+
+![ Figure 47 ](/Pictures/Figure47.png)
+
+The Output Register is implemented with an 8-bit register and stores 8 bits of data received from the Bus when the I/O control signal is active and the rising edge of the clock signal appears.
+
+This action occurs when the OUT instruction is executed during [ microstep T4 ](https://github.com/LincaMarius/ISAP-1_Instruction_Set/blob/main/Pictures/Figure5.png).
+
+The OUT output is connected to the Binary Display and is permanently active.
+
+The Binary Display consists of 8 LEDs connected directly to the output of the Output Register.
+
+![ Figure 48 ](/Pictures/Figure48.png)
 
 ### Implementation of the ISAP-1 Computer version 0.1 in Logisim
 The functional implementation of the ISAP-1 Computer version 1 in the Logisim program is presented in the file [ ISAP-1_ver0_1.circ ](/Logisim/ISAP-1_ver0_1.circ).
