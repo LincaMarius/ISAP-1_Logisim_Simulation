@@ -168,7 +168,33 @@ The output is connected to the Logic and Arithmetic Unit permanently.
 
 Pin R is to display when this block is reading from the bus.
 
+### Adder/Subtractor Implementation
+The SAP-1 computer does not have an Arithmetic and Logical Unit because the Logical Unit is missing. So we only have an Arithmetic Unit.
 
+In the following we used the ALU notation for simplicity, even though we only have one Adder/Subtractor.
+
+The Arithmetic Unit has the following input, output and control signals:
+- ALUA – the contents of the Accumulator Register are connected to the Arithmetic Unit as operand A
+- ALUB – the contents of Register B are connected to the Arithmetic Unit as operand B
+- SU - Subtraction – control signal that activates subtraction operation to be performed if it is high
+- EU - control signal that commands the activation of the outputs to put on the Bus the Result of the arithmetic operation performed
+- DOUT - Data Output – connects to the bus
+
+The implementation of the Arithmetic Unit in Logisim is shown in the following figure:
+
+![ Figure 43 ](/Pictures/Figure43.png)
+
+The Arithmetic and Logic Unit has as its main element an 8-bit Adder. The addition calculation is performed continuously.
+
+This means that any change to any ALUA or ALUB input data immediately causes the output result to change. In reality there is a propagation delay of about 25ns for the 74LS83 chip.
+
+The Subtraction operation is done by inverting the value of operand B (one's complement) and adds one by applying the SU signal to the Carry In input (two's complement).
+
+The output to the Bus is provided by a three-state buffer and is active only when the EU control signal is high.
+
+This action occurs for any arithmetic instruction with are ADD and SUB during [ micro-step T6 ](https://github.com/LincaMarius/ISAP-1_Instruction_Set/blob/main/Pictures/Figure3.png).
+
+The W pin has the role of displaying when the Result is writing to the bus.
 
 ### Control Block Implementation
 The Control Block is very important for the operation of any system and must be implemented with great care because the system's performance depends on it.
